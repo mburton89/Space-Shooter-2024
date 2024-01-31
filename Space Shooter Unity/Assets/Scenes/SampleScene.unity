@@ -862,7 +862,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxX: 1000
   maxY: 1000
-  minZ: 500
+  minZ: 501
   maxZ: 10000
   numberOfStarsToSpawn: 5000
   starPrefab: {fileID: 6634768546333711543, guid: 3163d383b237bbc47a77507d06181c5b, type: 3}
