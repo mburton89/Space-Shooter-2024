@@ -12,10 +12,22 @@ public class EnemyShip : Ship
         target = FindObjectOfType<PlayerShip>().transform;
     }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.GetComponent<PlayerShip>())
+        {
+            collision.gameObject.GetComponent<PlayerShip>().TakeDamage(1);
+            Explode();
+        }
+    }
+
     // Update is called once per frame
     void Update()
     {
-        FollowTarget();
+        if (target != null) 
+        {
+            FollowTarget();
+        }
     }
 
     void FollowTarget()

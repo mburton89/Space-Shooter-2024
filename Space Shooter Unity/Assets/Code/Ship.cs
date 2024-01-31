@@ -15,7 +15,15 @@ public class Ship : MonoBehaviour
     public float projectileSpeed;
 
     public float currentSpeed;
-    public int currentHealth;
+    [HideInInspector] public int currentHealth;
+
+    ParticleSystem thrustParticles;
+
+    private void Awake()
+    {
+        thrustParticles = GetComponentInChildren<ParticleSystem>();
+        currentHealth = maxHealth;
+    }
 
     private void FixedUpdate()
     {
@@ -28,6 +36,10 @@ public class Ship : MonoBehaviour
     public void Thrust()
     {
         rigidBody2D.AddForce(transform.up * acceleration);
+        if (thrustParticles != null)
+        { 
+            thrustParticles.Emit(1);
+        }
     }
 
     public void Shoot()
@@ -41,6 +53,8 @@ public class Ship : MonoBehaviour
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
+
+        HUD.Instance.DisplayHealth(currentHealth, maxHealth);
 
         if (currentHealth <= 0)
         {
