@@ -5,6 +5,7 @@ using UnityEngine;
 public class EnemyShip : Ship
 {
     Transform target;
+    public bool isGunner;
 
     // Start is called before the first frame update
     void Start()
@@ -27,6 +28,11 @@ public class EnemyShip : Ship
         if (target != null) 
         {
             FollowTarget();
+        }
+
+        if (isGunner && canShoot)
+        {
+            Shoot();
         }
     }
 

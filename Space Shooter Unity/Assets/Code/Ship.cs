@@ -19,10 +19,13 @@ public class Ship : MonoBehaviour
 
     ParticleSystem thrustParticles;
 
+    public bool canShoot;
+
     private void Awake()
     {
         thrustParticles = GetComponentInChildren<ParticleSystem>();
         currentHealth = maxHealth;
+        canShoot = true;
     }
 
     private void FixedUpdate()
@@ -42,19 +45,30 @@ public class Ship : MonoBehaviour
         }
     }
 
+    private IEnumerator CoolDown() 
+    {
+        canShoot = false;
+        yield return new WaitForSeconds(fireRate);
+        canShoot = true;
+    }
+
     public void Shoot()
     {
         GameObject projectile = Instantiate(projectilePrefab, projectileSpawnPoint.position, transform.rotation);
         projectile.GetComponent<Rigidbody2D>().AddForce(transform.up * projectileSpeed);
         projectile.GetComponent<Projectile>().GetFired(gameObject);
         Destroy(projectile, 4);
+        StartCoroutine(CoolDown());
     }
 
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
 
-        HUD.Instance.DisplayHealth(currentHealth, maxHealth);
+        if (GetComponent<PlayerShip>())
+        { 
+            HUD.Instance.DisplayHealth(currentHealth, maxHealth);
+        }
 
         if (currentHealth <= 0)
         {
@@ -63,7 +77,11 @@ public class Ship : MonoBehaviour
     }
 
     public void Explode()
-    { 
+    {
+        Instantiate(Resources.Load("Explosion"), transform.position, transform.rotation);
+
+        FindObjectOfType<EnemyShipSpawner>().CountEnemyShips();
+
         Destroy(gameObject);
     }
 }
