@@ -10,6 +10,7 @@ public class MainMenu : MonoBehaviour
     public Button startButton;
     public TextMeshProUGUI highestWaveText;
 
+    //Skibidee Toliet
     void Start()
     {
         startButton.onClick.AddListener(HandleStartButtonClicked);
