@@ -10,6 +10,8 @@ public class MainMenu : MonoBehaviour
     public Button startButton;
     public TextMeshProUGUI highestWaveText;
 
+    //why use many word when few word do trick
+
     void Start()
     {
         startButton.onClick.AddListener(HandleStartButtonClicked);
