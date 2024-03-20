@@ -7,6 +7,8 @@ using TMPro;
 
 public class MainMenu : MonoBehaviour
 {
+    //You wrote the wrong code, fool!
+
     public Button startButton;
     public TextMeshProUGUI highestWaveText;
 
