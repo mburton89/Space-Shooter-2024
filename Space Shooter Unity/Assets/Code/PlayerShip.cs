@@ -17,7 +17,8 @@ public class PlayerShip : Ship
         }
         if (Input.GetMouseButtonDown(0))
         {
-            Shoot();
+            Echo();
+            //Shoot();
         }
 
         FollowMouse();

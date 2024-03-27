@@ -22,6 +22,14 @@ public class EnemyShip : Ship
         }
     }
 
+    private void OnParticleCollision(GameObject other)
+    {
+        if (other.tag=="Player")
+        {
+            Debug.Log("Spotted");
+        }
+    }
+
     // Update is called once per frame
     void Update()
     {
