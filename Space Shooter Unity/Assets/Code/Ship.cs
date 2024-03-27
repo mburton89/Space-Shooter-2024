@@ -30,7 +30,6 @@ public class Ship : MonoBehaviour
         thrustParticles = GetComponentInChildren<ParticleSystem>();
         currentHealth = maxHealth;
         canShoot = true;
-        ePS = GetComponent<ParticleSystem>();
     }
 
     private void FixedUpdate()
@@ -99,7 +98,8 @@ public class Ship : MonoBehaviour
     {
         if (ePS != null)
         {
-            ePS.Emit(2);
+            Debug.Log("Echo1");
+            ePS.Play();
         }
         Debug.Log("Echoed");
     }

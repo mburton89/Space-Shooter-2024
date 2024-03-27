@@ -1214,6 +1214,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy Ship - Gunner
       objectReference: {fileID: 0}
+    - target: {fileID: 3351866936739474196, guid: 6c761dafbc854cd48939ecdef1d59f67, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3557513081634563272, guid: 6c761dafbc854cd48939ecdef1d59f67, type: 3}
       propertyPath: m_LocalPosition.x
       value: 5.53
@@ -1312,6 +1316,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7206897214637074783, guid: 62435a8a1d903e74da24a38b6a6b025a, type: 3}
+      propertyPath: moveWithTransform
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7206897214637074783, guid: 62435a8a1d903e74da24a38b6a6b025a, type: 3}
       propertyPath: CollisionModule.type
       value: 1
       objectReference: {fileID: 0}
@@ -1355,6 +1363,10 @@ PrefabInstance:
     - target: {fileID: 1447908762837115385, guid: ddf537ab6d5d0d34f84509024429912c, type: 3}
       propertyPath: m_Name
       value: Enemy Ship - Rammer
+      objectReference: {fileID: 0}
+    - target: {fileID: 1447908762837115385, guid: ddf537ab6d5d0d34f84509024429912c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1447908762837115385, guid: ddf537ab6d5d0d34f84509024429912c, type: 3}
       propertyPath: m_TagString
