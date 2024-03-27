@@ -32,9 +32,9 @@ public class PlayerShip : Ship
 
     public void HandleJoystick(Vector3 direction)
     {
-        transform.up = direction;
         if (direction.magnitude > 0.1f)
         { 
+            transform.up = direction;
             Thrust(direction.magnitude);
         }
     }

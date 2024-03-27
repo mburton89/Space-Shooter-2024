@@ -1,7 +1,10 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class MoveObjectWithController : MonoBehaviour
 {
+    public InputActionAsset controls;
+
     public float moveSpeed = 5f; // Adjust this to change the speed of movement
     PlayerShip playerShip;
     public GameObject echoPrefab;
@@ -10,6 +13,7 @@ public class MoveObjectWithController : MonoBehaviour
     {
         playerShip = GetComponent<PlayerShip>();
     }
+
     // Update is called once per frame
     void Update()
     {
@@ -30,5 +34,25 @@ public class MoveObjectWithController : MonoBehaviour
             Debug.Log("Button " + "Jump" + " is pressed!");
             Instantiate(echoPrefab, transform.position, transform.rotation, null);
         }
+    }
+
+    private void OnPressRightTrigger()
+    {
+        Instantiate(echoPrefab, transform.position, transform.rotation, null);
+    }
+
+    private void OnPressLeftTrigger()
+    {
+        print("OnPressLeftTrigger");
+    }
+
+    private void OnPressSouthButton()
+    {
+        Instantiate(echoPrefab, transform.position, transform.rotation, null);
+    }
+
+    private void OnPressWesthButton()
+    {
+        print("OnPressWestButton");
     }
 }
