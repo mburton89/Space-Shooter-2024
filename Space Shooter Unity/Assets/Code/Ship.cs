@@ -47,7 +47,7 @@ public class Ship : MonoBehaviour
         rigidBody2D.AddForce(transform.up * acceleration);
         if (thrustParticles != null)
        { 
-            thrustParticles.Emit(1);
+            //thrustParticles.Emit(1);
         }
     }
 
