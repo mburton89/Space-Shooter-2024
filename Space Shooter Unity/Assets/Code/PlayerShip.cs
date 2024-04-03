@@ -21,7 +21,7 @@ public class PlayerShip : Ship
             //Shoot();
         }
 
-        //FollowMouse();
+        FollowMouse();
     }
 
     void FollowMouse()
