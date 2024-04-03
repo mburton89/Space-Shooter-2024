@@ -32,7 +32,9 @@ public class EnemyShip : Ship
         {
             Debug.Log("Spotted");
             swapSprite = true;
-            SpriteSwap();
+            Debug.Log("Swap is True");
+           StartCoroutine(SpriteSwap());
+            Debug.Log("Sprite Swap ACTIVATE");
         }
     }
 
@@ -59,12 +61,13 @@ public class EnemyShip : Ship
 
     IEnumerator SpriteSwap()
     {
+        Debug.Log("Enumerator active");
         if (swapSprite == true)
         {
-            spriteRenderer.sprite = sprites[1];
+            spriteRenderer.sprite = sprites[0];
             yield return new WaitForSeconds(revealTime);
             Debug.Log("spriteSwapped");
-            spriteRenderer.sprite = sprites[0];
+            spriteRenderer.sprite = sprites[1];
             swapSprite = false;
         }
     }
