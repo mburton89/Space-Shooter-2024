@@ -45,6 +45,15 @@ public class Ship : MonoBehaviour
         }
     }
 
+    public void Thrust(float strength)
+    {
+        rigidBody2D.AddForce(transform.up * acceleration * strength);
+        if (thrustParticles != null)
+        {
+            thrustParticles.Emit(1);
+        }
+    }
+
     private IEnumerator CoolDown() 
     {
         canShoot = false;
