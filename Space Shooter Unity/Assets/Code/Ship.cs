@@ -10,7 +10,7 @@ public class Ship : MonoBehaviour
     public Transform projectileSpawnPoint;
     //public GameObject projectileEchoPrefab;
     
-    [SerializeField]ParticleSystem ePS;
+    [SerializeField]ParticleSystem echoParticleSystem;
 
     public float acceleration;
     public float maxSpeed;
@@ -105,10 +105,10 @@ public class Ship : MonoBehaviour
 
     public void Echo()
     {
-        if (ePS != null)
+        if (echoParticleSystem != null)
         {
             Debug.Log("Echo1");
-            ePS.Play();
+            echoParticleSystem.Play();
         }
         Debug.Log("Echoed");
     }
