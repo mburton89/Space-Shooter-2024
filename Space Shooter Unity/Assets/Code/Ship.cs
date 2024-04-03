@@ -25,6 +25,8 @@ public class Ship : MonoBehaviour
 
     public bool canShoot;
 
+  
+
     private void Awake()
     {
         thrustParticles = GetComponentInChildren<ParticleSystem>();
@@ -120,4 +122,6 @@ public class Ship : MonoBehaviour
             Debug.Log("triggered ECHO");
         }
     }
+
+    
 }

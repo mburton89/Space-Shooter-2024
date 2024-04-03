@@ -4,6 +4,17 @@ using UnityEngine;
 
 public class PlayerShip : Ship
 {
+
+    public float moveSpeed = 10f; // Movement speed of the player
+
+    public float dashDistance = 100f; // Distance to dash
+    public float dashDuration = 1f; // Duration of the dash
+    public float dashCooldown = 1f; // Cooldown between dashes
+    public bool isInvincibleDuringDash = true; // Flag to enable invincibility during dash
+    public float dashForce = 100f;
+
+    private bool isDashing = false;
+
     void Start()
     {
         
@@ -11,9 +22,28 @@ public class PlayerShip : Ship
 
     void Update()
     {
+        float moveHorizontal = Input.GetAxis("Horizontal");
+        float moveVertical = Input.GetAxis("Vertical");
+
+        // Calculate movement direction
+        Vector2 movement = new Vector2(moveHorizontal, moveVertical).normalized;
+
+        // Move the player
+        rigidBody2D.velocity = movement * moveSpeed;
+        
+
+        if (movement != Vector2.zero)
+        {
+            float angle = Mathf.Atan2(movement.y, movement.x) * Mathf.Rad2Deg;
+            rigidBody2D.rotation = angle;
+        }
+
         if (Input.GetMouseButton(1))
         {
-            Thrust();
+            if (isDashing == false)
+            {
+                StartCoroutine(Dash(rigidBody2D));
+            }
         }
         if (Input.GetMouseButtonDown(0))
         {
@@ -21,7 +51,7 @@ public class PlayerShip : Ship
             //Shoot();
         }
 
-        FollowMouse();
+        //FollowMouse();
     }
 
     void FollowMouse()
@@ -38,5 +68,58 @@ public class PlayerShip : Ship
             transform.up = direction;
             Thrust(direction.magnitude);
         }
+    }
+
+    IEnumerator Dash(Rigidbody2D rb)
+    {
+        isDashing = true;
+
+
+        // Calculate dash direction based on current facing direction or any other logic
+        Vector2 dashDirection = rb.transform.right;
+
+        // Disable collisions or apply other invincibility logic
+        if (isInvincibleDuringDash)
+        {
+            // Example: Set collider to trigger during dash
+            GetComponent<Collider2D>().isTrigger = true;
+        }
+
+        // Move the player by the dash distance in the dash direction
+        float elapsed = 0f;
+        while (elapsed < dashDuration)
+        {
+            // Calculate the current force based on the elapsed time
+            float currentForce = Mathf.Lerp(0f, dashForce, elapsed / dashDuration);
+
+            // Apply force to the player in the dash direction
+            rb.AddForce(dashDirection * currentForce);
+
+            // Increment elapsed time
+            elapsed += Time.deltaTime;
+
+            // Wait for the next frame
+            yield return null;
+        }
+
+        Debug.Log("Dashing");
+
+        // Wait for the dash duration
+        yield return new WaitForSeconds(dashDuration);
+
+        // Reset velocity
+        rb.velocity = Vector2.zero;
+
+        // Enable collisions or revert invincibility logic
+        if (isInvincibleDuringDash)
+        {
+            // Example: Set collider back to solid after dash
+            GetComponent<Collider2D>().isTrigger = false;
+        }
+
+        // Start cooldown
+        yield return new WaitForSeconds(dashCooldown);
+
+        isDashing = false;
     }
 }
