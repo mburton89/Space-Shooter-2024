@@ -6,6 +6,10 @@ public class EnemyShip : Ship
 {
     Transform target;
     public bool isGunner;
+    public Sprite[] sprites;
+    private bool swapSprite = false;
+    public SpriteRenderer spriteRenderer;
+    public int revealTime;
 
     // Start is called before the first frame update
     void Start()
@@ -27,6 +31,8 @@ public class EnemyShip : Ship
         if (other.tag=="Player")
         {
             Debug.Log("Spotted");
+            swapSprite = true;
+            SpriteSwap();
         }
     }
 
@@ -49,5 +55,17 @@ public class EnemyShip : Ship
         Vector2 directionToFace = new Vector2(target.position.x - transform.position.x, target.position.y - transform.position.y);
         transform.up = directionToFace;
         Thrust();
+    }
+
+    IEnumerator SpriteSwap()
+    {
+        if (swapSprite == true)
+        {
+            spriteRenderer.sprite = sprites[1];
+            yield return new WaitForSeconds(revealTime);
+            Debug.Log("spriteSwapped");
+            spriteRenderer.sprite = sprites[0];
+            swapSprite = false;
+        }
     }
 }
