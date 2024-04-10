@@ -5,11 +5,14 @@ using UnityEngine;
 public class EnemyShip : Ship
 {
     Transform target;
+    Transform home;
     public bool isGunner;
 
-    // Start is called before the first frame update
     void Start()
     {
+        home = FindObjectOfType<HomeBase>().transform;
+        GoHome();
+
         target = FindObjectOfType<PlayerShip>().transform;
     }
 
@@ -22,12 +25,16 @@ public class EnemyShip : Ship
         }
     }
 
-    // Update is called once per frame
     void Update()
     {
-        if (target != null) 
+        //if Bat uses echolocation, switch target to Bat call FollowTarget
+
+        //if Bat takes one damage, switch target to home base and return
+
+
+        if (target != null)
         {
-            FollowTarget();
+            GoHome();
         }
 
         if (isGunner && canShoot)
@@ -39,6 +46,13 @@ public class EnemyShip : Ship
     void FollowTarget()
     {
         Vector2 directionToFace = new Vector2(target.position.x - transform.position.x, target.position.y - transform.position.y);
+        transform.up = directionToFace;
+        Thrust();
+    }
+
+    void GoHome()
+    {
+        Vector2 directionToFace = new Vector2(home.position.x - transform.position.x, home.position.y - transform.position.y);
         transform.up = directionToFace;
         Thrust();
     }
