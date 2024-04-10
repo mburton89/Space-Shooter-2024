@@ -21,7 +21,7 @@ public class PlayerShip : Ship
             //Shoot();
         }
 
-        FollowMouse();
+        //FollowMouse();
     }
 
     void FollowMouse()
@@ -29,5 +29,14 @@ public class PlayerShip : Ship
         Vector3 mousePosition = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 10));
         Vector2 directionToFace = new Vector2(mousePosition.x - transform.position.x, mousePosition.y - transform.position.y);
         transform.up = directionToFace;
+    }
+
+    public void HandleJoystick(Vector3 direction)
+    {
+        if (direction.magnitude > 0.1f)
+        { 
+            transform.up = direction;
+            Thrust(direction.magnitude);
+        }
     }
 }

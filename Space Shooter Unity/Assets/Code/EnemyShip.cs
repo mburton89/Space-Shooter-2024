@@ -5,15 +5,23 @@ using UnityEngine;
 public class EnemyShip : Ship
 {
     Transform target;
+    Transform home;
+<<<<<<< Updated upstream
+=======
+    public GameObject[] enemies;
+    public GameObject homeBase;
+>>>>>>> Stashed changes
     public bool isGunner;
     public Sprite[] sprites;
     private bool swapSprite = false;
     public SpriteRenderer spriteRenderer;
     public int revealTime;
 
-    // Start is called before the first frame update
     void Start()
     {
+        home = FindObjectOfType<HomeBase>().transform;
+        GoHome();
+
         target = FindObjectOfType<PlayerShip>().transform;
     }
 
@@ -26,6 +34,8 @@ public class EnemyShip : Ship
         }
     }
 
+<<<<<<< HEAD
+=======
     private void OnParticleCollision(GameObject other)
     {
         if (other.tag=="Player")
@@ -39,18 +49,33 @@ public class EnemyShip : Ship
     }
 
     // Update is called once per frame
+>>>>>>> JoeyBommarito
     void Update()
     {
-        if (target != null) 
+<<<<<<< Updated upstream
+        //if Bat uses echolocation, switch target to Bat call FollowTarget
+
+        //if Bat takes one damage, switch target to home base and return
+
+
+=======
+>>>>>>> Stashed changes
+        if (target != null)
         {
-            FollowTarget();
+            GoHome();
         }
 
         if (isGunner && canShoot)
         {
             Shoot();
         }
+
+        foreach (GameObject enemy in enemies)
+        { 
+            if ((collision))
+        }
     }
+
 
     void FollowTarget()
     {
@@ -59,6 +84,16 @@ public class EnemyShip : Ship
         Thrust();
     }
 
+<<<<<<< HEAD
+    void GoHome()
+    {
+        Vector2 directionToFace = new Vector2(home.position.x - transform.position.x, home.position.y - transform.position.y);
+        transform.up = directionToFace;
+        Thrust();
+    }
+
+
+=======
     IEnumerator SpriteSwap()
     {
         Debug.Log("Enumerator active");
@@ -71,4 +106,5 @@ public class EnemyShip : Ship
             swapSprite = false;
         }
     }
+>>>>>>> JoeyBommarito
 }

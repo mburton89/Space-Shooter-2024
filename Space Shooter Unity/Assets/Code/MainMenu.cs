@@ -10,6 +10,12 @@ public class MainMenu : MonoBehaviour
     public Button startButton;
     public TextMeshProUGUI highestWaveText;
 
+<<<<<<< HEAD
+    //womp womp
+=======
+    //Main Menu Code 
+>>>>>>> main
+
     void Start()
     {
         startButton.onClick.AddListener(HandleStartButtonClicked);
