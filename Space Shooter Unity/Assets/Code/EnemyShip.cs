@@ -12,6 +12,10 @@ public class EnemyShip : Ship
     public GameObject homeBase;
 >>>>>>> Stashed changes
     public bool isGunner;
+    public Sprite[] sprites;
+    private bool swapSprite = false;
+    public SpriteRenderer spriteRenderer;
+    public int revealTime;
 
     void Start()
     {
@@ -30,6 +34,22 @@ public class EnemyShip : Ship
         }
     }
 
+<<<<<<< HEAD
+=======
+    private void OnParticleCollision(GameObject other)
+    {
+        if (other.tag=="Player")
+        {
+            Debug.Log("Spotted");
+            swapSprite = true;
+            Debug.Log("Swap is True");
+           StartCoroutine(SpriteSwap());
+            Debug.Log("Sprite Swap ACTIVATE");
+        }
+    }
+
+    // Update is called once per frame
+>>>>>>> JoeyBommarito
     void Update()
     {
 <<<<<<< Updated upstream
@@ -64,6 +84,7 @@ public class EnemyShip : Ship
         Thrust();
     }
 
+<<<<<<< HEAD
     void GoHome()
     {
         Vector2 directionToFace = new Vector2(home.position.x - transform.position.x, home.position.y - transform.position.y);
@@ -72,4 +93,18 @@ public class EnemyShip : Ship
     }
 
 
+=======
+    IEnumerator SpriteSwap()
+    {
+        Debug.Log("Enumerator active");
+        if (swapSprite == true)
+        {
+            spriteRenderer.sprite = sprites[0];
+            yield return new WaitForSeconds(revealTime);
+            Debug.Log("spriteSwapped");
+            spriteRenderer.sprite = sprites[1];
+            swapSprite = false;
+        }
+    }
+>>>>>>> JoeyBommarito
 }
