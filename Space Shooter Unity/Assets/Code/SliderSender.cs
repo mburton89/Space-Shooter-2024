@@ -7,7 +7,7 @@ public class SliderSender : MonoBehaviour
 {
     public GameManager GameManager;
     private Slider slider;
-    public float rateOfRecovery = 0.0001f;
+    public float rateOfRecovery = 0.00005f;
 
     // Start is called before the first frame update
     void Start()
