@@ -35,7 +35,7 @@ public class PlayerShip : Ship
 
         if (movement != Vector2.zero)
         {
-            float angle = Mathf.Atan2(movement.y, movement.x) * Mathf.Rad2Deg;
+            float angle = (Mathf.Atan2(movement.y, movement.x) * Mathf.Rad2Deg) - 90;
             rigidBody2D.rotation = angle;
         }
 
@@ -95,7 +95,7 @@ public class PlayerShip : Ship
             GameManager.dashBarValue -= .33f;
 
             // Calculate dash direction based on current facing direction or any other logic
-            Vector2 dashDirection = rb.transform.right;
+            Vector2 dashDirection = rb.transform.forward;
 
             // Disable collisions or apply other invincibility logic
             if (isInvincibleDuringDash)
