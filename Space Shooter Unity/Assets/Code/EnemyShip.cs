@@ -10,6 +10,7 @@ public class EnemyShip : Ship
     public GameObject[] enemies;
     public GameObject homeBase;
 
+    private bool followplayer = false;
 
     public bool isGunner;
     public Sprite[] sprites;
@@ -45,14 +46,22 @@ public class EnemyShip : Ship
             Debug.Log("Swap is True");
            StartCoroutine(SpriteSwap());
             Debug.Log("Sprite Swap ACTIVATE");
-            StartCoroutine(FollowPlayer());
+            followplayer = true;
             Debug.Log("Following PLayer");
         }
     }
 
     void Update()
     {
-
+        if(followplayer)
+        {
+            FollowTarget();
+            StartCoroutine(FollowPlayer());
+        }
+        else
+        {
+            GoHome();
+        }
         /* if (target != null)
          {
              GoHome();
@@ -116,9 +125,8 @@ public class EnemyShip : Ship
 
     IEnumerator FollowPlayer()
     {
-        FollowTarget();
         yield return new WaitForSeconds(recallBird);
-        GoHome();
+        followplayer = false;
     }
 
 }
