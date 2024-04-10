@@ -6,6 +6,11 @@ public class EnemyShip : Ship
 {
     Transform target;
     Transform home;
+<<<<<<< Updated upstream
+=======
+    public GameObject[] enemies;
+    public GameObject homeBase;
+>>>>>>> Stashed changes
     public bool isGunner;
 
     void Start()
@@ -27,11 +32,14 @@ public class EnemyShip : Ship
 
     void Update()
     {
+<<<<<<< Updated upstream
         //if Bat uses echolocation, switch target to Bat call FollowTarget
 
         //if Bat takes one damage, switch target to home base and return
 
 
+=======
+>>>>>>> Stashed changes
         if (target != null)
         {
             GoHome();
@@ -41,7 +49,13 @@ public class EnemyShip : Ship
         {
             Shoot();
         }
+
+        foreach (GameObject enemy in enemies)
+        { 
+            if ((collision))
+        }
     }
+
 
     void FollowTarget()
     {
@@ -56,4 +70,6 @@ public class EnemyShip : Ship
         transform.up = directionToFace;
         Thrust();
     }
+
+
 }
