@@ -19,6 +19,7 @@ public class PlayerShip : Ship
 
     void Start()
     {
+        GameManager = GameManager.Instance;
         tempMoveSpeed = moveSpeed;
     }
 

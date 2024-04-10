@@ -12,6 +12,7 @@ public class SliderSender : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        GameManager = GameManager.Instance;
         slider = GetComponent<Slider>();
         
     }
