@@ -7,7 +7,6 @@ public class EnemyShip : Ship
     Transform target;
     
 
-    public GameObject[] enemies;
     public GameObject homeBase;
 
     private bool followplayer = false;
@@ -17,8 +16,7 @@ public class EnemyShip : Ship
     private bool swapSprite = false;
     public SpriteRenderer spriteRenderer;
     public int revealTime;
-    public int recallBird;
-    PlayerShip playerShip;
+    public int recallBird = 3;
 
     void Start()
     {
