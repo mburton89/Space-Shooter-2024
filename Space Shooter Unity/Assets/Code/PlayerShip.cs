@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerShip : Ship
 {
     public GameManager GameManager;
+    public AudioSource dashSF;
     public float moveSpeed = 10f; // Movement speed of the player
     private float tempMoveSpeed;
 
@@ -93,6 +94,9 @@ public class PlayerShip : Ship
             isDashing = true;
 
             GameManager.dashBarValue -= .33f;
+            
+            // Dash Sound
+            dashSF.Play();
 
             // Calculate dash direction based on current facing direction or any other logic
             Vector2 dashDirection = rb.transform.forward;
