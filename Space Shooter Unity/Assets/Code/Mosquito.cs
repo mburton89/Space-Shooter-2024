@@ -29,6 +29,8 @@ public class Mosquito : MonoBehaviour
             {
                 gameManager.dashBarValue = 1;
             }
+
+            this.gameObject.SetActive(false);
             Destroy(this);
         }
     }
