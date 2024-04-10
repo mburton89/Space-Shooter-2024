@@ -5,21 +5,23 @@ using UnityEngine;
 public class EnemyShip : Ship
 {
     Transform target;
-    Transform home;
-<<<<<<< Updated upstream
-=======
+    
+
     public GameObject[] enemies;
     public GameObject homeBase;
->>>>>>> Stashed changes
+
+
     public bool isGunner;
     public Sprite[] sprites;
     private bool swapSprite = false;
     public SpriteRenderer spriteRenderer;
     public int revealTime;
+    public int recallBird;
+    PlayerShip playerShip;
 
     void Start()
     {
-        home = FindObjectOfType<HomeBase>().transform;
+        //homeBase = GetComponent<GameObject>().; //GameObject.FindGameObjectsWithTag("HomeBase");
         GoHome();
 
         target = FindObjectOfType<PlayerShip>().transform;
@@ -34,9 +36,7 @@ public class EnemyShip : Ship
         }
     }
 
-<<<<<<< HEAD
-=======
-    private void OnParticleCollision(GameObject other)
+    public void OnParticleCollision(GameObject other)
     {
         if (other.tag=="Player")
         {
@@ -45,35 +45,37 @@ public class EnemyShip : Ship
             Debug.Log("Swap is True");
            StartCoroutine(SpriteSwap());
             Debug.Log("Sprite Swap ACTIVATE");
+            StartCoroutine(FollowPlayer());
+            Debug.Log("Following PLayer");
         }
     }
 
-    // Update is called once per frame
->>>>>>> JoeyBommarito
     void Update()
     {
-<<<<<<< Updated upstream
-        //if Bat uses echolocation, switch target to Bat call FollowTarget
 
-        //if Bat takes one damage, switch target to home base and return
+        /* if (target != null)
+         {
+             GoHome();
+         }*/
 
-
-=======
->>>>>>> Stashed changes
-        if (target != null)
-        {
-            GoHome();
-        }
-
-        if (isGunner && canShoot)
+        /*if (isGunner && canShoot)
         {
             Shoot();
-        }
+        }*/
 
-        foreach (GameObject enemy in enemies)
+        /*foreach (GameObject enemy in enemies)
         { 
-            if ((collision))
-        }
+            if (playerShip.CompareTag("Player"))
+            {
+                StartCoroutine(FollowPlayer());
+            }
+            else
+            {
+                GoHome();
+            }
+        }*/
+
+       
     }
 
 
@@ -84,16 +86,16 @@ public class EnemyShip : Ship
         Thrust();
     }
 
-<<<<<<< HEAD
+
     void GoHome()
     {
-        Vector2 directionToFace = new Vector2(home.position.x - transform.position.x, home.position.y - transform.position.y);
+        Vector2 directionToFace = new Vector2(homeBase.transform.position.x - transform.position.x, homeBase.transform.position.y - transform.position.y);
         transform.up = directionToFace;
         Thrust();
     }
 
 
-=======
+
     IEnumerator SpriteSwap()
     {
         Debug.Log("Enumerator active");
@@ -106,5 +108,17 @@ public class EnemyShip : Ship
             swapSprite = false;
         }
     }
->>>>>>> JoeyBommarito
+
+    /*IEnumerator WaitForBullshit()
+    {
+        yield return new WaitForSeconds(recallBird);
+    }*/
+
+    IEnumerator FollowPlayer()
+    {
+        FollowTarget();
+        yield return new WaitForSeconds(recallBird);
+        GoHome();
+    }
+
 }
