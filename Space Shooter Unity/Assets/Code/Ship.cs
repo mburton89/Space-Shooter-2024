@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class Ship : MonoBehaviour
 {
+    public AudioSource audio;
     public Rigidbody2D rigidBody2D;
     public GameObject projectilePrefab;
     public Transform projectileSpawnPoint;
@@ -111,6 +112,7 @@ public class Ship : MonoBehaviour
         {
             Debug.Log("Echo1");
             echoParticleSystem.Play();
+            audio.Play();
         }
         Debug.Log("Echoed");
     }
