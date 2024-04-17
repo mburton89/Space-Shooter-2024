@@ -5,15 +5,24 @@ using UnityEngine;
 public class EnemyShip : Ship
 {
     Transform target;
+    
+
+    public GameObject homeBase;
+
+    private bool followplayer = false;
+
     public bool isGunner;
     public Sprite[] sprites;
     private bool swapSprite = false;
     public SpriteRenderer spriteRenderer;
     public int revealTime;
+    public int recallBird = 3;
 
-    // Start is called before the first frame update
     void Start()
     {
+        //homeBase = GetComponent<GameObject>().; //GameObject.FindGameObjectsWithTag("HomeBase");
+        GoHome();
+
         target = FindObjectOfType<PlayerShip>().transform;
     }
 
@@ -26,7 +35,7 @@ public class EnemyShip : Ship
         }
     }
 
-    private void OnParticleCollision(GameObject other)
+    public void OnParticleCollision(GameObject other)
     {
         if (other.tag=="Player")
         {
@@ -35,22 +44,47 @@ public class EnemyShip : Ship
             Debug.Log("Swap is True");
            StartCoroutine(SpriteSwap());
             Debug.Log("Sprite Swap ACTIVATE");
+            followplayer = true;
+            Debug.Log("Following PLayer");
         }
     }
 
-    // Update is called once per frame
     void Update()
     {
-        if (target != null) 
+        if(followplayer)
         {
             FollowTarget();
+            StartCoroutine(FollowPlayer());
         }
+        else
+        {
+            GoHome();
+        }
+        /* if (target != null)
+         {
+             GoHome();
+         }*/
 
-        if (isGunner && canShoot)
+        /*if (isGunner && canShoot)
         {
             Shoot();
-        }
+        }*/
+
+        /*foreach (GameObject enemy in enemies)
+        { 
+            if (playerShip.CompareTag("Player"))
+            {
+                StartCoroutine(FollowPlayer());
+            }
+            else
+            {
+                GoHome();
+            }
+        }*/
+
+       
     }
+
 
     void FollowTarget()
     {
@@ -58,6 +92,16 @@ public class EnemyShip : Ship
         transform.up = directionToFace;
         Thrust();
     }
+
+
+    void GoHome()
+    {
+        Vector2 directionToFace = new Vector2(homeBase.transform.position.x - transform.position.x, homeBase.transform.position.y - transform.position.y);
+        transform.up = directionToFace;
+        Thrust();
+    }
+
+
 
     IEnumerator SpriteSwap()
     {
@@ -71,4 +115,16 @@ public class EnemyShip : Ship
             swapSprite = false;
         }
     }
+
+    /*IEnumerator WaitForBullshit()
+    {
+        yield return new WaitForSeconds(recallBird);
+    }*/
+
+    IEnumerator FollowPlayer()
+    {
+        yield return new WaitForSeconds(recallBird);
+        followplayer = false;
+    }
+
 }
