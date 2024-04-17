@@ -18,10 +18,10 @@ public class Timer : MonoBehaviour
     private void Update()
     {
         // function
-        timeToSunrise -= Time.deltaTime;
 
         if (timeToSunrise <= 0.0f)
         {
+            timeToSunrise -= Time.deltaTime;
             RoundEnd();
         }
 
