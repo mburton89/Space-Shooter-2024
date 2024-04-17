@@ -7658,6 +7658,10 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3499337063745813523, guid: d539ac84536c94149b2cf5e04fe1534a, type: 3}
+      propertyPath: owlHomeBase
+      value: 
+      objectReference: {fileID: 227627454}
+    - target: {fileID: 3499337063745813523, guid: d539ac84536c94149b2cf5e04fe1534a, type: 3}
       propertyPath: MothSpots.Array.size
       value: 3
       objectReference: {fileID: 0}
