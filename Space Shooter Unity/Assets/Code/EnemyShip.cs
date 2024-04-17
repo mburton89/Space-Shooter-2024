@@ -35,6 +35,9 @@ public class EnemyShip : Ship
             Debug.Log("Swap is True");
            StartCoroutine(SpriteSwap());
             Debug.Log("Sprite Swap ACTIVATE");
+            /*Echo();
+            Debug.Log("Echoed Back");*/
+
         }
     }
 
