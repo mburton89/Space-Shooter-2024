@@ -17,6 +17,8 @@ public class PlayerShip : Ship
 
     private bool isDashing = false;
 
+    private bool stopMoveFeature = false;
+
     void Start()
     {
         GameManager = GameManager.Instance;
@@ -54,15 +56,16 @@ public class PlayerShip : Ship
             //Shoot();
         }
 
-        if (GameManager.dashBarValue <= .33f)
+        
+        if (GameManager.dashBarValue <= .33f && stopMoveFeature == false)
         {
             moveSpeed = tempMoveSpeed / 2f;
         }
-        else if (GameManager.dashBarValue >= .33f && GameManager.dashBarValue <= .66f)
+        else if (GameManager.dashBarValue >= .33f && GameManager.dashBarValue <= .66f && stopMoveFeature == false)
         {
             moveSpeed = tempMoveSpeed / 1.5f;
         }
-        else if (GameManager.dashBarValue > .66f)
+        else if (GameManager.dashBarValue > .66f && stopMoveFeature == false)
         {
             moveSpeed = tempMoveSpeed;
         }
@@ -113,11 +116,12 @@ public class PlayerShip : Ship
             float elapsed = 0f;
             while (elapsed < dashDuration)
             {
+                stopMoveFeature = true;
                 // Calculate the current force based on the elapsed time
                 float currentForce = Mathf.Lerp(0f, dashForce, elapsed / dashDuration);
 
                 // Apply force to the player in the dash direction
-                rb.AddForce(dashDirection * currentForce);
+                moveSpeed = tempMoveSpeed * dashForce;
 
                 // Increment elapsed time
                 elapsed += Time.deltaTime;
@@ -125,7 +129,7 @@ public class PlayerShip : Ship
                 // Wait for the next frame
                 yield return null;
             }
-
+            stopMoveFeature = false;
             Debug.Log("Dashing");
 
             // Wait for the dash duration
@@ -144,6 +148,7 @@ public class PlayerShip : Ship
             // Start cooldown
             yield return new WaitForSeconds(dashCooldown);
 
+            moveSpeed = tempMoveSpeed;
             isDashing = false;
         }
         else

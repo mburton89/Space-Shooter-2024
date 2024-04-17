@@ -7,6 +7,8 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
     public float dashBarValue;
+    public float points;
+    public float mothsGotten;
 
 
     private void Awake()

@@ -12,7 +12,7 @@ public class MainMenu : MonoBehaviour
     public Button startButton;
     public TextMeshProUGUI highestWaveText;
 
-    //Main Menu Code 
+
 
     void Start()
     {
