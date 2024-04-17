@@ -21,12 +21,16 @@ public class Timer : MonoBehaviour
 
         if (timeToSunrise <= 0.0f)
         {
-            timeToSunrise -= Time.deltaTime;
             RoundEnd();
+        }
+        else
+        {
+            timeToSunrise -= Time.deltaTime;
+            gameObject.transform.Rotate(0, 0, Time.deltaTime * rotateZ);
         }
 
         // form
-        gameObject.transform.Rotate(0, 0, Time.deltaTime * rotateZ);
+        
     }
 
     public void RoundEnd()
