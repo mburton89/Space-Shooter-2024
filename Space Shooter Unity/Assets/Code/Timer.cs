@@ -6,18 +6,27 @@ using TMPro;
 public class Timer : MonoBehaviour
 {
 
-    public float timeToSunrise = 60.0f;
+    public float timeToSunrise = 80.0f;
     public float timeToNextNight = 3.0f;
-    public TextMeshProUGUI nighttimeTimer;
+    private float rotateZ;
+
+    private void Start()
+    {
+        rotateZ = -180 / timeToSunrise;
+    }
 
     private void Update()
     {
+        // function
         timeToSunrise -= Time.deltaTime;
 
         if (timeToSunrise <= 0.0f)
         {
             RoundEnd();
         }
+
+        // form
+        gameObject.transform.Rotate(0, 0, Time.deltaTime * rotateZ);
     }
 
     public void RoundEnd()
