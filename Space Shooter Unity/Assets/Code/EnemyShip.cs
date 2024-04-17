@@ -5,11 +5,15 @@ using UnityEngine;
 public class EnemyShip : Ship
 {
     Transform target;
+
+    public GameManager manager;
     
 
-    public GameObject homeBase;
+    public GameObject owlHomeBase;
 
-    private bool followplayer = false;
+    public GameObject[] MothSpots;
+
+    private bool particalHit = false;
 
     public bool isGunner;
     public Sprite[] sprites;
@@ -18,8 +22,14 @@ public class EnemyShip : Ship
     public int revealTime;
     public int recallBird = 3;
 
+    public bool isMoth;
+    public bool isOwl;
+
+    private int whichSpot = 0;
+
     void Start()
     {
+        manager = FindAnyObjectByType<GameManager>();
         //homeBase = GetComponent<GameObject>().; //GameObject.FindGameObjectsWithTag("HomeBase");
         GoHome();
 
@@ -28,9 +38,15 @@ public class EnemyShip : Ship
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.GetComponent<PlayerShip>())
+        if (collision.gameObject.GetComponent<PlayerShip>() && isOwl)
         {
             collision.gameObject.GetComponent<PlayerShip>().TakeDamage(1);
+            Explode();
+        }
+        else if (collision.gameObject.GetComponent<PlayerShip>() && isMoth)
+        {
+            manager.mothsGotten += 1;
+            Debug.Log(manager.mothsGotten);
             Explode();
         }
     }
@@ -42,23 +58,33 @@ public class EnemyShip : Ship
             Debug.Log("Spotted");
             swapSprite = true;
             Debug.Log("Swap is True");
-           StartCoroutine(SpriteSwap());
+            StartCoroutine(SpriteSwap());
             Debug.Log("Sprite Swap ACTIVATE");
-            followplayer = true;
+            particalHit = true;
             Debug.Log("Following PLayer");
         }
     }
 
     void Update()
     {
-        if(followplayer)
+        if(particalHit && isOwl)
         {
             FollowTarget();
             StartCoroutine(FollowPlayer());
         }
-        else
+        else if (particalHit && isMoth)
+        {
+            runAway();
+            StartCoroutine(RunAway());
+        }
+        else if (isOwl)
         {
             GoHome();
+        }
+        else if (isMoth)
+        {
+            
+            MothGoHome();
         }
         /* if (target != null)
          {
@@ -93,10 +119,24 @@ public class EnemyShip : Ship
         Thrust();
     }
 
+    void runAway()
+    {
+        Vector2 directionToFace = new Vector2(target.position.x + transform.position.x, target.position.y + transform.position.y);
+        transform.up = directionToFace;
+        Thrust();
+    }
+
 
     void GoHome()
     {
-        Vector2 directionToFace = new Vector2(homeBase.transform.position.x - transform.position.x, homeBase.transform.position.y - transform.position.y);
+        Vector2 directionToFace = new Vector2(owlHomeBase.transform.position.x - transform.position.x, owlHomeBase.transform.position.y - transform.position.y);
+        transform.up = directionToFace;
+        Thrust();
+    }
+
+    void MothGoHome()
+    {
+        Vector2 directionToFace = new Vector2(MothSpots[whichSpot].transform.position.x - transform.position.x, MothSpots[whichSpot].transform.position.y - transform.position.y);
         transform.up = directionToFace;
         Thrust();
     }
@@ -108,6 +148,15 @@ public class EnemyShip : Ship
         Debug.Log("Enumerator active");
         if (swapSprite == true)
         {
+            if (whichSpot >= MothSpots.Length)
+            {
+                whichSpot = 0;
+            }
+            else
+            {
+                whichSpot += 1;
+                Debug.Log(whichSpot);
+            }
             spriteRenderer.sprite = sprites[0];
             yield return new WaitForSeconds(revealTime);
             Debug.Log("spriteSwapped");
@@ -124,7 +173,14 @@ public class EnemyShip : Ship
     IEnumerator FollowPlayer()
     {
         yield return new WaitForSeconds(recallBird);
-        followplayer = false;
+        particalHit = false;
+    }
+
+    IEnumerator RunAway()
+    {
+        yield return new WaitForSeconds(recallBird);
+        
+        particalHit = false;
     }
 
 }
