@@ -55,13 +55,24 @@ public class EnemyShip : Ship
     {
         if (other.tag=="Player")
         {
-            Debug.Log("Spotted");
             swapSprite = true;
-            Debug.Log("Swap is True");
             StartCoroutine(SpriteSwap());
-            Debug.Log("Sprite Swap ACTIVATE");
             particalHit = true;
-            Debug.Log("Following PLayer");
+
+            if (whichSpot >= MothSpots.Length && isMoth)
+            {
+                whichSpot = 0;
+                Debug.Log(whichSpot);
+            }
+            else if (isMoth)
+            {
+                whichSpot += 1;
+                if(whichSpot >= MothSpots.Length)
+                {
+                    whichSpot = 0;
+                }
+                Debug.Log(whichSpot);
+            }
         }
     }
 
@@ -148,20 +159,11 @@ public class EnemyShip : Ship
         Debug.Log("Enumerator active");
         if (swapSprite == true)
         {
-            if (whichSpot >= MothSpots.Length)
-            {
-                whichSpot = 0;
-            }
-            else
-            {
-                whichSpot += 1;
-                Debug.Log(whichSpot);
-            }
             spriteRenderer.sprite = sprites[0];
             yield return new WaitForSeconds(revealTime);
-            Debug.Log("spriteSwapped");
             spriteRenderer.sprite = sprites[1];
             swapSprite = false;
+
         }
     }
 
