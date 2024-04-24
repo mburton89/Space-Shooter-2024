@@ -8,16 +8,26 @@ public class PauseSystem : MonoBehaviour
     //private GameObject[] pauseMenu;
     [SerializeField] GameObject pauseMenu;
 
+    public void Update()
+    {
+        if (Input.GetKeyDown("E"))
+        {
+            Pause();
+            Debug.Log("Escaped");
+        }
+    }
     public void Pause()
     {
         pauseMenu.SetActive(true);
+        
         Time.timeScale = 0;
-
+        Debug.Log("Paused");
     }
     public void MainMenu()
     {
         SceneManager.LoadScene("Main Menu");
         Time.timeScale = 1;
+        Debug.Log("MainMenu");
 
     }
 
@@ -25,6 +35,8 @@ public class PauseSystem : MonoBehaviour
     {
         pauseMenu.SetActive(false);
         Time.timeScale = 1;
+        Debug.Log("Resumed");
+
     }
     public void Quit()
     {
@@ -35,6 +47,7 @@ public class PauseSystem : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         Time.timeScale = 1;
+        Debug.Log("Restart");
 
     }
 
