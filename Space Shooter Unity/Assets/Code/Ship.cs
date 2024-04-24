@@ -121,6 +121,7 @@ public class Ship : MonoBehaviour
     {
         if (other.tag == "Enemy")
         {
+            //Echo();
             Debug.Log("triggered ECHO");
         }
     }
