@@ -7,7 +7,8 @@ public class PauseSystem : MonoBehaviour
 {
     //private GameObject[] pauseMenu;
     [SerializeField] GameObject pauseMenu;
-    AudioSource Soundtrack;
+    public AudioSource Soundtrack;
+    
 
     bool isPaused = false;
     
