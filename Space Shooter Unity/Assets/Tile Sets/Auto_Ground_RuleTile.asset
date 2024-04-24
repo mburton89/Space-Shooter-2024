@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d1514134bc4fbd41bb739b1b9a49231, type: 3}
   m_Name: Auto_Ground_RuleTile
   m_EditorClassIdentifier: 
-  m_DefaultSprite: {fileID: -1477393564, guid: 1869ae5103c481149a75d1f1f0c2fe53, type: 3}
+  m_DefaultSprite: {fileID: 936116654, guid: 364897db5d451fa49b174c39caca65c7, type: 3}
   m_DefaultGameObject: {fileID: 0}
   m_DefaultColliderType: 1
   m_TilingRules:
