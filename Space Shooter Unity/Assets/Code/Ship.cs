@@ -1,12 +1,17 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Ship : MonoBehaviour
 {
+    public AudioSource audio;
     public Rigidbody2D rigidBody2D;
     public GameObject projectilePrefab;
     public Transform projectileSpawnPoint;
+    //public GameObject projectileEchoPrefab;
+    
+    [SerializeField]ParticleSystem echoParticleSystem;
 
     public float acceleration;
     public float maxSpeed;
@@ -20,6 +25,8 @@ public class Ship : MonoBehaviour
     ParticleSystem thrustParticles;
 
     public bool canShoot;
+
+  
 
     private void Awake()
     {
@@ -40,7 +47,16 @@ public class Ship : MonoBehaviour
     {
         rigidBody2D.AddForce(transform.up * acceleration);
         if (thrustParticles != null)
-        { 
+       { 
+            //thrustParticles.Emit(1);
+        }
+    }
+
+    public void Thrust(float strength)
+    {
+        rigidBody2D.AddForce(transform.up * acceleration * strength);
+        if (thrustParticles != null)
+        {
             thrustParticles.Emit(1);
         }
     }
@@ -89,4 +105,25 @@ public class Ship : MonoBehaviour
 
         Destroy(gameObject);
     }
+
+    public void Echo()
+    {
+        if (echoParticleSystem != null)
+        {
+            Debug.Log("Echo1");
+            echoParticleSystem.Play();
+            audio.Play();
+        }
+        Debug.Log("Echoed");
+    }
+
+    private void OnParticleCollision(GameObject other)
+    {
+        if (other.tag == "Enemy")
+        {
+            Debug.Log("triggered ECHO");
+        }
+    }
+
+    
 }

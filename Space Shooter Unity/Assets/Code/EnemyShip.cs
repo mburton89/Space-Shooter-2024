@@ -6,6 +6,10 @@ public class EnemyShip : Ship
 {
     Transform target;
     public bool isGunner;
+    public Sprite[] sprites;
+    private bool swapSprite = false;
+    public SpriteRenderer spriteRenderer;
+    public int revealTime;
 
     // Start is called before the first frame update
     void Start()
@@ -19,6 +23,18 @@ public class EnemyShip : Ship
         {
             collision.gameObject.GetComponent<PlayerShip>().TakeDamage(1);
             Explode();
+        }
+    }
+
+    private void OnParticleCollision(GameObject other)
+    {
+        if (other.tag=="Player")
+        {
+            Debug.Log("Spotted");
+            swapSprite = true;
+            Debug.Log("Swap is True");
+           StartCoroutine(SpriteSwap());
+            Debug.Log("Sprite Swap ACTIVATE");
         }
     }
 
@@ -41,5 +57,18 @@ public class EnemyShip : Ship
         Vector2 directionToFace = new Vector2(target.position.x - transform.position.x, target.position.y - transform.position.y);
         transform.up = directionToFace;
         Thrust();
+    }
+
+    IEnumerator SpriteSwap()
+    {
+        Debug.Log("Enumerator active");
+        if (swapSprite == true)
+        {
+            spriteRenderer.sprite = sprites[0];
+            yield return new WaitForSeconds(revealTime);
+            Debug.Log("spriteSwapped");
+            spriteRenderer.sprite = sprites[1];
+            swapSprite = false;
+        }
     }
 }
