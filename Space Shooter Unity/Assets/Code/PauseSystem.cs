@@ -12,9 +12,23 @@ public class PauseSystem : MonoBehaviour
     
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Z))
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
-            Debug.Log("Z was Pressed");
+            Debug.Log("Button was Pressed");
+            if (isPaused == true)
+            {
+                Resume();
+            }
+            else
+            {
+                Pause();
+                Debug.Log("Escaped");
+            }
+        }
+
+        /*if (Input.GetButtonDown("Pause Menu"))
+        {
+            Debug.Log("Button was Pressed");
             if (isPaused == true)
             {
                 Resume();
@@ -25,7 +39,7 @@ public class PauseSystem : MonoBehaviour
                 Debug.Log("Escaped");
             }
             
-        }
+        }*/
         
     }
     public void Pause()
