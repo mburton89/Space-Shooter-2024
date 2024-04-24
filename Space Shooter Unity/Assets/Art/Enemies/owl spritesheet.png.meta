@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: cafa284072b53b74db9c699faeff43d4
+guid: 93702e4e2b1057d41bae6d6452e37079
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -149,13 +149,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Brown Bat Animation-Sheet (1)_0
+      name: owl spritesheet_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 9
-        width: 293
-        height: 283
+        x: 94
+        y: 235
+        width: 652
+        height: 400
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -163,20 +163,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c1de6309d9fe9374b82c47fae85afe92
-      internalID: 182195248
+      spriteID: bdaaa22d450d8c44cb5db83ea99bae4b
+      internalID: -1748626995
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Brown Bat Animation-Sheet (1)_1
+      name: owl spritesheet_1
       rect:
         serializedVersion: 2
-        x: 298
-        y: 9
-        width: 286
-        height: 283
+        x: 934
+        y: 235
+        width: 652
+        height: 386
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -184,20 +184,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7a739455870bf3f459beab6f178eeb0c
-      internalID: 794034043
+      spriteID: f9450fe453cd10942a442a595987c85f
+      internalID: 31118281
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Brown Bat Animation-Sheet (1)_2
+      name: owl spritesheet_2
       rect:
         serializedVersion: 2
-        x: 626
-        y: 9
-        width: 212
-        height: 283
+        x: 1774
+        y: 219
+        width: 652
+        height: 402
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -205,20 +205,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0eb51c37051c02646a3c969aa85baa3b
-      internalID: -141166508
+      spriteID: 9af210a95d6600b4ba60fc9ad4f9e313
+      internalID: -839116638
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Brown Bat Animation-Sheet (1)_3
+      name: owl spritesheet_3
       rect:
         serializedVersion: 2
-        x: 926
-        y: 9
-        width: 195
-        height: 283
+        x: 2739
+        y: 219
+        width: 402
+        height: 402
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -226,20 +226,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4b26c788284d7f54bb03d688a07f075b
-      internalID: -1289575589
+      spriteID: 7b51d5da45894824b89c5f686690cdc8
+      internalID: 430363998
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Brown Bat Animation-Sheet (1)_4
+      name: owl spritesheet_4
       rect:
         serializedVersion: 2
-        x: 1217
-        y: 9
-        width: 195
-        height: 283
+        x: 3595
+        y: 219
+        width: 370
+        height: 402
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -247,20 +247,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: abf5808b1713ac14e8d1ab28fdb48981
-      internalID: 1492544842
+      spriteID: f302a6de06ffda2498606f6ef1116319
+      internalID: 1252508857
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Brown Bat Animation-Sheet (1)_5
+      name: owl spritesheet_5
       rect:
         serializedVersion: 2
-        x: 1498
-        y: 9
-        width: 214
-        height: 283
+        x: 4419
+        y: 219
+        width: 402
+        height: 402
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -268,20 +268,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 150e676ef19573c44aec80eaf7363fc2
-      internalID: 49779801
+      spriteID: 2b4e670e86c711943a2131f2a44d3aae
+      internalID: 186739535
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Brown Bat Animation-Sheet (1)_6
+      name: owl spritesheet_6
       rect:
         serializedVersion: 2
-        x: 1753
-        y: 9
-        width: 285
-        height: 283
+        x: 5150
+        y: 219
+        width: 620
+        height: 402
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -289,20 +289,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4846bb292500b2d459915f7c2e89c8d9
-      internalID: -585134947
+      spriteID: de8732a4ba677084b8aba38196db5097
+      internalID: 1611999124
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Brown Bat Animation-Sheet (1)_7
+      name: owl spritesheet_7
       rect:
         serializedVersion: 2
-        x: 2045
-        y: 9
-        width: 285
-        height: 283
+        x: 5974
+        y: 219
+        width: 652
+        height: 402
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -310,71 +310,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3aad6c437a883f149aacda662f8cc8a2
-      internalID: -878497337
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Brown Bat Animation-Sheet (1)_8
-      rect:
-        serializedVersion: 2
-        x: 2353
-        y: 9
-        width: 249
-        height: 283
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3057dd322d8862d47adb604b71ec2172
-      internalID: -445436727
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Brown Bat Animation-Sheet (1)_9
-      rect:
-        serializedVersion: 2
-        x: 2645
-        y: 9
-        width: 248
-        height: 283
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0be1c2f1c9233bf43aa0e03d3ad3af9e
-      internalID: 804596592
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Brown Bat Animation-Sheet (1)_10
-      rect:
-        serializedVersion: 2
-        x: 2917
-        y: 9
-        width: 283
-        height: 283
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 39c1a84fe97e8a144a33e22e1fe384ce
-      internalID: 2110278348
+      spriteID: f5b5af3723936264582ab2c78ed05dbf
+      internalID: -1127887072
       vertices: []
       indices: 
       edges: []
@@ -390,17 +327,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Brown Bat Animation-Sheet (1)_0: 182195248
-      Brown Bat Animation-Sheet (1)_1: 794034043
-      Brown Bat Animation-Sheet (1)_10: 2110278348
-      Brown Bat Animation-Sheet (1)_2: -141166508
-      Brown Bat Animation-Sheet (1)_3: -1289575589
-      Brown Bat Animation-Sheet (1)_4: 1492544842
-      Brown Bat Animation-Sheet (1)_5: 49779801
-      Brown Bat Animation-Sheet (1)_6: -585134947
-      Brown Bat Animation-Sheet (1)_7: -878497337
-      Brown Bat Animation-Sheet (1)_8: -445436727
-      Brown Bat Animation-Sheet (1)_9: 804596592
+      owl spritesheet_0: -1748626995
+      owl spritesheet_1: 31118281
+      owl spritesheet_2: -839116638
+      owl spritesheet_3: 430363998
+      owl spritesheet_4: 1252508857
+      owl spritesheet_5: 186739535
+      owl spritesheet_6: 1611999124
+      owl spritesheet_7: -1127887072
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
