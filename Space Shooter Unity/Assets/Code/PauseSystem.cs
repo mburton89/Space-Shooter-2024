@@ -1,10 +1,43 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PauseSystem : MonoBehaviour
 {
-    private GameObject[] pauseObjects;
+    //private GameObject[] pauseMenu;
+    [SerializeField] GameObject pauseMenu;
+
+    public void Pause()
+    {
+        pauseMenu.SetActive(true);
+        Time.timeScale = 0;
+
+    }
+    public void MainMenu()
+    {
+        SceneManager.LoadScene("Main Menu");
+        Time.timeScale = 1;
+
+    }
+
+    public void Resume()
+    {
+        pauseMenu.SetActive(false);
+        Time.timeScale = 1;
+    }
+    public void Quit()
+    {
+
+    }
+    
+    public void Resart()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        Time.timeScale = 1;
+
+    }
+
 
     // Start is called before the first frame update
 
@@ -32,7 +65,7 @@ public class PauseSystem : MonoBehaviour
     }*/
 
     // Use this for initialization
-    void Start()
+    /*void Start()
     {
         Time.timeScale = 1;
         pauseObjects = GameObject.FindGameObjectsWithTag("ShowOnPause");
@@ -104,6 +137,6 @@ public class PauseSystem : MonoBehaviour
     public void LoadLevel(string level)
     {
         Application.LoadLevel(level);
-    }
+    }*/
 
 }
