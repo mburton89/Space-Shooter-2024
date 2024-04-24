@@ -9,18 +9,45 @@ public class PauseSystem : MonoBehaviour
     [SerializeField] GameObject pauseMenu;
     AudioSource Soundtrack;
 
-    public void Update()
+    bool isPaused = false;
+    
+    void Update()
     {
-        if (Input.GetKeyDown("E"))
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
-            Pause();
-            Debug.Log("Escaped");
+            Debug.Log("Button was Pressed");
+            if (isPaused == true)
+            {
+                Resume();
+            }
+            else
+            {
+                Pause();
+                Debug.Log("Escaped");
+            }
         }
+
+        /*if (Input.GetButtonDown("Pause Menu"))
+        {
+            Debug.Log("Button was Pressed");
+            if (isPaused == true)
+            {
+                Resume();
+            }
+            else
+            {
+                Pause();
+                Debug.Log("Escaped");
+            }
+            
+        }*/
+        
     }
     public void Pause()
     {
         pauseMenu.SetActive(true);
-        
+        isPaused = true;
+
         Time.timeScale = 0;
         Soundtrack.Pause();
         Debug.Log("Paused");
@@ -31,6 +58,7 @@ public class PauseSystem : MonoBehaviour
     {
         SceneManager.LoadScene("Main Menu");
         Time.timeScale = 1;
+        isPaused = false;
         Debug.Log("MainMenu");
 
     }
@@ -39,13 +67,14 @@ public class PauseSystem : MonoBehaviour
     {
         pauseMenu.SetActive(false);
         Time.timeScale = 1;
+        isPaused = false;
         Debug.Log("Resumed");
 
         Soundtrack.Play();
     }
     public void Quit()
     {
-
+       Application.Quit();
     }
     
     public void Resart()
