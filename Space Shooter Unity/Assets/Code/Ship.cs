@@ -9,6 +9,7 @@ public class Ship : MonoBehaviour
     public Rigidbody2D rigidBody2D;
     public GameObject projectilePrefab;
     public Transform projectileSpawnPoint;
+    public Animator animator;
     //public GameObject projectileEchoPrefab;
     
     [SerializeField]ParticleSystem echoParticleSystem;
