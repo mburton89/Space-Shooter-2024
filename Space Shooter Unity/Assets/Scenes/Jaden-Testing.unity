@@ -8220,33 +8220,9 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3499337063745813523, guid: d539ac84536c94149b2cf5e04fe1534a, type: 3}
-      propertyPath: homeBase
+      propertyPath: spriteRenderer
       value: 
       objectReference: {fileID: 0}
-    - target: {fileID: 3499337063745813523, guid: d539ac84536c94149b2cf5e04fe1534a, type: 3}
-      propertyPath: revealTime
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 3499337063745813523, guid: d539ac84536c94149b2cf5e04fe1534a, type: 3}
-      propertyPath: owlHomeBase
-      value: 
-      objectReference: {fileID: 227627454}
-    - target: {fileID: 3499337063745813523, guid: d539ac84536c94149b2cf5e04fe1534a, type: 3}
-      propertyPath: MothSpots.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 3499337063745813523, guid: d539ac84536c94149b2cf5e04fe1534a, type: 3}
-      propertyPath: MothSpots.Array.data[0]
-      value: 
-      objectReference: {fileID: 227627454}
-    - target: {fileID: 3499337063745813523, guid: d539ac84536c94149b2cf5e04fe1534a, type: 3}
-      propertyPath: MothSpots.Array.data[1]
-      value: 
-      objectReference: {fileID: 449859688}
-    - target: {fileID: 3499337063745813523, guid: d539ac84536c94149b2cf5e04fe1534a, type: 3}
-      propertyPath: MothSpots.Array.data[2]
-      value: 
-      objectReference: {fileID: 1422316059}
     - target: {fileID: 8204319375359455342, guid: d539ac84536c94149b2cf5e04fe1534a, type: 3}
       propertyPath: m_Name
       value: Moth
