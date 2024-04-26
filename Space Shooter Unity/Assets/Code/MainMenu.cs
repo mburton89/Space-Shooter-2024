@@ -10,7 +10,7 @@ public class MainMenu : MonoBehaviour
     //You wrote the wrong script, fool!
 
     public Button startButton;
-    public TextMeshProUGUI highestWaveText;
+    //public TextMeshProUGUI highestWaveText;
 
 
 
@@ -19,7 +19,7 @@ public class MainMenu : MonoBehaviour
         startButton.onClick.AddListener(HandleStartButtonClicked);
 
         int highestWave = PlayerPrefs.GetInt("highestWave");
-        highestWaveText.SetText("Highest Wave: " + highestWave);
+        //highestWaveText.SetText("Highest Wave: " + highestWave);
     }
 
     void HandleStartButtonClicked()
