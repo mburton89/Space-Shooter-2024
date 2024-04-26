@@ -16,6 +16,7 @@ public class PlayerShip : Ship
     public float dashForce = 100f;
 
     private bool isDashing = false;
+    public Animator playerAnimator;
 
     private bool stopMoveFeature = false;
 
@@ -96,6 +97,8 @@ public class PlayerShip : Ship
         if(GameManager.dashBarValue >= .33f)
         {
             isDashing = true;
+
+            playerAnimator.SetTrigger("dive");
 
             GameManager.dashBarValue -= .33f;
             
