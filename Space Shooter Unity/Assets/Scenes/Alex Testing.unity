@@ -1404,6 +1404,7 @@ MonoBehaviour:
   rigidBody2D: {fileID: 1222661411}
   projectilePrefab: {fileID: 6227090169043134863, guid: f2a89909224ca0d49a3b1ebfdbdd1bd8, type: 3}
   projectileSpawnPoint: {fileID: 1059677364}
+  collect: {fileID: 0}
   echoParticleSystem: {fileID: 1301348138}
   acceleration: 4
   maxSpeed: 30
@@ -7895,10 +7896,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2072130948}
     - target: {fileID: 7767827175942927292, guid: 9295c65bc49bb81418defb475c370380, type: 3}
-      propertyPath: collectVolume
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7767827175942927292, guid: 9295c65bc49bb81418defb475c370380, type: 3}
       propertyPath: UniversalSound
       value: 
       objectReference: {fileID: 2047674741}
@@ -8026,21 +8023,9 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3499337063745813523, guid: d539ac84536c94149b2cf5e04fe1534a, type: 3}
-      propertyPath: homeBase
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 3499337063745813523, guid: d539ac84536c94149b2cf5e04fe1534a, type: 3}
-      propertyPath: revealTime
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 3499337063745813523, guid: d539ac84536c94149b2cf5e04fe1534a, type: 3}
       propertyPath: owlHomeBase
       value: 
       objectReference: {fileID: 227627454}
-    - target: {fileID: 3499337063745813523, guid: d539ac84536c94149b2cf5e04fe1534a, type: 3}
-      propertyPath: MothSpots.Array.size
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 3499337063745813523, guid: d539ac84536c94149b2cf5e04fe1534a, type: 3}
       propertyPath: MothSpots.Array.data[0]
       value: 
