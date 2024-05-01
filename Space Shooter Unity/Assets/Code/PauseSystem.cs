@@ -7,8 +7,6 @@ public class PauseSystem : MonoBehaviour
 {
     //private GameObject[] pauseMenu;
     [SerializeField] GameObject pauseMenu;
-    public AudioSource Soundtrack;
-    
 
     bool isPaused = false;
     
@@ -50,10 +48,7 @@ public class PauseSystem : MonoBehaviour
         isPaused = true;
 
         Time.timeScale = 0;
-        Soundtrack.Pause();
         Debug.Log("Paused");
-
-       
     }
     public void MainMenu()
     {
@@ -71,7 +66,6 @@ public class PauseSystem : MonoBehaviour
         isPaused = false;
         Debug.Log("Resumed");
 
-        Soundtrack.Play();
     }
     public void Quit()
     {

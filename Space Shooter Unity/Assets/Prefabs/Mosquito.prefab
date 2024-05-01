@@ -122,7 +122,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameManager: {fileID: 0}
   mosquitoAudio: {fileID: 84260122841676154}
-  UniversalSound: {fileID: 84260122841676154}
+  UniversalSound: {fileID: 0}
   buzz: {fileID: 8300000, guid: 85e325a7a4df40541a81abef219733c9, type: 3}
   collect: {fileID: 8300000, guid: 7612e06f5f30ea14c9a8bb674e3c8036, type: 3}
   collectVolume: 1
@@ -138,16 +138,16 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 7612e06f5f30ea14c9a8bb674e3c8036, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.056
-  m_Pitch: -0.5
+  m_Volume: 0.108
+  m_Pitch: -1.1
   Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 63
+  Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 30
+  MaxDistance: 60
   Pan2D: 0
   rolloffMode: 1
   BypassEffects: 0
@@ -197,7 +197,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0.075
+      value: 0
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -212,7 +212,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
