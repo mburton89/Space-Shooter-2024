@@ -9,6 +9,7 @@ public class Ship : MonoBehaviour
     public Rigidbody2D rigidBody2D;
     public GameObject projectilePrefab;
     public Transform projectileSpawnPoint;
+    public AudioClip collect;
     //public GameObject projectileEchoPrefab;
     
     [SerializeField]ParticleSystem echoParticleSystem;
@@ -101,6 +102,10 @@ public class Ship : MonoBehaviour
         if (GetComponent<PlayerShip>())
         {
             GameManager.Instance.GameOver();
+        }
+        if(GetComponent<EnemyShip>())
+        {
+            SoundFXManager.Instance.PlaySoundFXClip(collect, transform, 1f);
         }
 
         Destroy(gameObject);

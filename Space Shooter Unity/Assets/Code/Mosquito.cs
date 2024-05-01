@@ -41,8 +41,10 @@ public class Mosquito : MonoBehaviour
                 gameManager.dashBarValue = 1;
             }
 
-
-            SoundFXManager.Instance.PlaySoundFXClip(collect, transform, .2f);   
+            mosquitoAudio.clip = collect;
+            mosquitoAudio.volume = collectVolume;
+            mosquitoAudio.spatialBlend = 0;
+            SoundFXManager.Instance.PlaySoundFXClip(collect, transform, collectVolume);   
 
             this.gameObject.SetActive(false);
             Destroy(this);
