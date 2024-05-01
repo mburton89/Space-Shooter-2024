@@ -40,7 +40,7 @@ public class EnemyShip : Ship
             Debug.Log("Spotted");
             swapSprite = true;
             Debug.Log("Swap is True");
-           StartCoroutine(SpriteSwap());
+            StartCoroutine(SpriteSwap());
             Debug.Log("Sprite Swap ACTIVATE");
             /*Echo();
             Debug.Log("Echoed Back");*/

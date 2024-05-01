@@ -6778,6 +6778,38 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.29, y: 0.29}
   m_EdgeRadius: 0
+--- !u!114 &1785070756
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1785070750}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 839c432aec0a7c943bd175f9a571a80e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audio: {fileID: 0}
+  rigidBody2D: {fileID: 0}
+  projectilePrefab: {fileID: 0}
+  projectileSpawnPoint: {fileID: 0}
+  animator: {fileID: 0}
+  echoParticleSystem: {fileID: 0}
+  acceleration: 0
+  maxSpeed: 0
+  maxHealth: 0
+  fireRate: 0
+  projectileSpeed: 0
+  currentSpeed: 0
+  currentHealth: 0
+  canShoot: 0
+  isGunner: 0
+  sprites: []
+  spriteRenderer: {fileID: 0}
+  revealTime: 0
+  animation: {fileID: 0}
+  AnimationNames: []
 --- !u!1 &1836917618
 GameObject:
   m_ObjectHideFlags: 0
@@ -6998,7 +7030,7 @@ Animation:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1433499410}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Animation: {fileID: 7400000, guid: 0d3b95bec3923414fb32e63da273d8a7, type: 2}
   m_Animations: []
@@ -7495,6 +7527,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6502958917565906278, guid: 9295c65bc49bb81418defb475c370380, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1785070755}
+    - targetCorrespondingSourceObject: {fileID: 6502958917565906278, guid: 9295c65bc49bb81418defb475c370380, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1785070756}
   m_SourcePrefab: {fileID: 100100000, guid: 9295c65bc49bb81418defb475c370380, type: 3}
 --- !u!1001 &7680017869597841723
 PrefabInstance:
@@ -7711,6 +7746,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 446460227941100274, guid: ddf537ab6d5d0d34f84509024429912c, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 1922436731}
+    - target: {fileID: 446460227941100274, guid: ddf537ab6d5d0d34f84509024429912c, type: 3}
       propertyPath: homeBase
       value: 
       objectReference: {fileID: 443046665}
@@ -7738,6 +7777,18 @@ PrefabInstance:
       propertyPath: sprites.Array.data[1]
       value: 
       objectReference: {fileID: -1748626995, guid: 93702e4e2b1057d41bae6d6452e37079, type: 3}
+    - target: {fileID: 446460227941100274, guid: ddf537ab6d5d0d34f84509024429912c, type: 3}
+      propertyPath: AnimationNames.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 446460227941100274, guid: ddf537ab6d5d0d34f84509024429912c, type: 3}
+      propertyPath: AnimationNames.Array.data[0]
+      value: BlobFlying
+      objectReference: {fileID: 0}
+    - target: {fileID: 446460227941100274, guid: ddf537ab6d5d0d34f84509024429912c, type: 3}
+      propertyPath: AnimationNames.Array.data[1]
+      value: OwlFlying
+      objectReference: {fileID: 0}
     - target: {fileID: 719430917574352244, guid: ddf537ab6d5d0d34f84509024429912c, type: 3}
       propertyPath: m_Size.x
       value: 2.58
