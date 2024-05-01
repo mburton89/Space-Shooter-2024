@@ -589,8 +589,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95342ae40881d714f9c2bb1b7b57f607, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 1222661410}
-  cameraZPostion: -10
+  player: {fileID: 0}
+  smoothing: 5
 --- !u!4 &609963198 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2398510004566804370, guid: fdd7ba8100f59e740a2abe6b049a78f0, type: 3}
@@ -7687,6 +7687,10 @@ PrefabInstance:
     - target: {fileID: 3912834338430822126, guid: 4186efe9eb3b7aa409f399c6915e186d, type: 3}
       propertyPath: m_Name
       value: Owl 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3912834338430822126, guid: 4186efe9eb3b7aa409f399c6915e186d, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4308161621095762363, guid: 4186efe9eb3b7aa409f399c6915e186d, type: 3}
       propertyPath: homeBase
