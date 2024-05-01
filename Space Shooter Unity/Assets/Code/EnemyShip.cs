@@ -6,10 +6,17 @@ public class EnemyShip : Ship
 {
     Transform target;
     public bool isGunner;
+
     public Sprite[] sprites;
     private bool swapSprite = false;
     public SpriteRenderer spriteRenderer;
     public int revealTime;
+
+    //public AnimationClip[] clips;
+    //private bool swapAnimation = false;
+    //public Animator animator;
+    public Animation animation;
+    public string[] AnimationNames;
 
     // Start is called before the first frame update
     void Start()
@@ -68,10 +75,18 @@ public class EnemyShip : Ship
         if (swapSprite == true)
         {
             spriteRenderer.sprite = sprites[0];
+            animation.Play(AnimationNames[0]);
             yield return new WaitForSeconds(revealTime);
             Debug.Log("spriteSwapped");
             spriteRenderer.sprite = sprites[1];
+            animation.Play(AnimationNames[1]);
             swapSprite = false;
         }
     }
+
+   
+
 }
+
+
+
