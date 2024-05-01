@@ -9,6 +9,7 @@ public class Ship : MonoBehaviour
     public Rigidbody2D rigidBody2D;
     public GameObject projectilePrefab;
     public Transform projectileSpawnPoint;
+    public Animator animator;
     //public GameObject projectileEchoPrefab;
     
     [SerializeField]ParticleSystem echoParticleSystem;
@@ -25,6 +26,8 @@ public class Ship : MonoBehaviour
     ParticleSystem thrustParticles;
 
     public bool canShoot;
+
+  
 
     private void Awake()
     {
@@ -47,6 +50,15 @@ public class Ship : MonoBehaviour
         if (thrustParticles != null)
        { 
             //thrustParticles.Emit(1);
+        }
+    }
+
+    public void Thrust(float strength)
+    {
+        rigidBody2D.AddForce(transform.up * acceleration * strength);
+        if (thrustParticles != null)
+        {
+            thrustParticles.Emit(1);
         }
     }
 
@@ -114,4 +126,6 @@ public class Ship : MonoBehaviour
             Debug.Log("triggered ECHO");
         }
     }
+
+    
 }
