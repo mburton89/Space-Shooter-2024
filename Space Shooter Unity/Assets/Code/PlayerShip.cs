@@ -18,6 +18,8 @@ public class PlayerShip : Ship
     private bool isDashing = false;
     public Animator playerAnimator;
 
+    private bool stopMoveFeature = false;
+
     void Start()
     {
         GameManager = GameManager.Instance;
@@ -32,14 +34,30 @@ public class PlayerShip : Ship
         // Calculate movement direction
         Vector2 movement = new Vector2(moveHorizontal, moveVertical).normalized;
 
-        // Move the player
-        rigidBody2D.velocity = movement * moveSpeed;
-        
+        // Store the current velocity
+        Vector2 currentVelocity = rigidBody2D.velocity;
 
+        // Check if there's input for movement
         if (movement != Vector2.zero)
         {
+            // Move the player
+            rigidBody2D.velocity = movement * moveSpeed;
+
+            // Rotate the player
             float angle = (Mathf.Atan2(movement.y, movement.x) * Mathf.Rad2Deg) - 90;
             rigidBody2D.rotation = angle;
+
+            // Reset stopMoveFeature since the player is moving
+            stopMoveFeature = false;
+        }
+        else if (!stopMoveFeature && currentVelocity.magnitude > 0f && Vector2.Dot(currentVelocity, rigidBody2D.velocity) <= 0f)
+        {
+            // If there's no input and the ship was previously moving, and it's now starting to slow down
+            // Set velocity to zero immediately
+            rigidBody2D.velocity = Vector2.zero;
+
+            // Set stopMoveFeature to true to prevent further stopping until player starts moving again
+            stopMoveFeature = true;
         }
 
         if (Input.GetMouseButton(1))
@@ -55,15 +73,16 @@ public class PlayerShip : Ship
             //Shoot();
         }
 
-        if (GameManager.dashBarValue <= .33f)
+        
+        if (GameManager.dashBarValue <= .33f && stopMoveFeature == false)
         {
             moveSpeed = tempMoveSpeed / 2f;
         }
-        else if (GameManager.dashBarValue >= .33f && GameManager.dashBarValue <= .66f)
+        else if (GameManager.dashBarValue >= .33f && GameManager.dashBarValue <= .66f && stopMoveFeature == false)
         {
             moveSpeed = tempMoveSpeed / 1.5f;
         }
-        else if (GameManager.dashBarValue > .66f)
+        else if (GameManager.dashBarValue > .66f && stopMoveFeature == false)
         {
             moveSpeed = tempMoveSpeed;
         }
@@ -116,11 +135,12 @@ public class PlayerShip : Ship
             float elapsed = 0f;
             while (elapsed < dashDuration)
             {
+                stopMoveFeature = true;
                 // Calculate the current force based on the elapsed time
                 float currentForce = Mathf.Lerp(0f, dashForce, elapsed / dashDuration);
 
                 // Apply force to the player in the dash direction
-                rb.AddForce(dashDirection * currentForce);
+                moveSpeed = tempMoveSpeed * dashForce;
 
                 // Increment elapsed time
                 elapsed += Time.deltaTime;
@@ -128,7 +148,7 @@ public class PlayerShip : Ship
                 // Wait for the next frame
                 yield return null;
             }
-
+            stopMoveFeature = false;
             Debug.Log("Dashing");
 
             // Wait for the dash duration
@@ -147,6 +167,7 @@ public class PlayerShip : Ship
             // Start cooldown
             yield return new WaitForSeconds(dashCooldown);
 
+            moveSpeed = tempMoveSpeed;
             isDashing = false;
         }
         else
