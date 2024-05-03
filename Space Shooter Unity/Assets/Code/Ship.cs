@@ -97,7 +97,7 @@ public class Ship : MonoBehaviour
     {
         Instantiate(Resources.Load("Explosion"), transform.position, transform.rotation);
 
-        FindObjectOfType<EnemyShipSpawner>().CountEnemyShips();
+        //FindObjectOfType<EnemyShipSpawner>().CountEnemyShips();
 
         if (GetComponent<PlayerShip>())
         {

@@ -32,7 +32,7 @@ public class EnemyShipSpawner : MonoBehaviour
         }
     }
 
-    public void CountEnemyShips()
+    /*public void CountEnemyShips()
     {
         currentNumberOfShips = FindObjectsOfType<EnemyShip>().Length;
 
@@ -49,5 +49,5 @@ public class EnemyShipSpawner : MonoBehaviour
                 PlayerPrefs.SetInt("highestWave", currentWave);
             }
         }
-    }
+    }*/
 }
