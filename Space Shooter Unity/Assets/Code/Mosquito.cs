@@ -42,7 +42,7 @@ public class Mosquito : MonoBehaviour
             }
 
 
-            SoundFXManager.Instance.PlaySoundFXClip(collect, transform, .2f);   
+            SoundFXManager.Instance.PlaySoundFXClip(collect, transform, collectVolume);   
 
             this.gameObject.SetActive(false);
             Destroy(this);
