@@ -28,6 +28,15 @@ public class EnemyShip : Ship
 
     private int whichSpot = 0;
 
+    public string[] animationClips;
+    public Animation anim;
+
+    public GameObject shadow;
+    public GameObject enemy;
+
+    //public RuntimeAnimatorController animator;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -35,6 +44,8 @@ public class EnemyShip : Ship
         //homeBase = GetComponent<GameObject>().; //GameObject.FindGameObjectsWithTag("HomeBase");
         GoHome();
         target = FindObjectOfType<PlayerShip>().transform;
+
+        //GetComponent<Animator>().runtimeAnimatorController = animators[currentAnimatorIndex];
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -166,10 +177,15 @@ public class EnemyShip : Ship
         Debug.Log("Enumerator active");
         if (swapSprite == true)
         {
-            spriteRenderer.sprite = sprites[0];
+            shadow.transform.localScale = Vector3.zero;
+            enemy.transform.localScale = Vector3.one;
+            //spriteRenderer.sprite = sprites[0];
+            //animationClips.anim = animatio
             yield return new WaitForSeconds(revealTime);
             Debug.Log("spriteSwapped");
-            spriteRenderer.sprite = sprites[1];
+            //spriteRenderer.sprite = sprites[1];
+            enemy.transform.localScale = Vector3.zero;
+            shadow.transform.localScale = Vector3.one;
             swapSprite = false;
         }
     }
