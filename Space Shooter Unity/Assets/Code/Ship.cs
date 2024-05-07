@@ -6,9 +6,12 @@ using UnityEngine;
 public class Ship : MonoBehaviour
 {
     public AudioSource audio;
+    public AudioClip damageSF;
+    public AudioClip echoSF;
     public Rigidbody2D rigidBody2D;
     public GameObject projectilePrefab;
     public Transform projectileSpawnPoint;
+    public Animator animator;
     //public GameObject projectileEchoPrefab;
     
     [SerializeField]ParticleSystem echoParticleSystem;
@@ -84,6 +87,8 @@ public class Ship : MonoBehaviour
         if (GetComponent<PlayerShip>())
         { 
             HUD.Instance.DisplayHealth(currentHealth, maxHealth);
+            audio.clip = damageSF;
+            audio.Play();
         }
 
         if (currentHealth <= 0)
@@ -96,7 +101,7 @@ public class Ship : MonoBehaviour
     {
         Instantiate(Resources.Load("Explosion"), transform.position, transform.rotation);
 
-        FindObjectOfType<EnemyShipSpawner>().CountEnemyShips();
+        //FindObjectOfType<EnemyShipSpawner>().CountEnemyShips();
 
         if (GetComponent<PlayerShip>())
         {
@@ -112,6 +117,7 @@ public class Ship : MonoBehaviour
         {
             Debug.Log("Echo1");
             echoParticleSystem.Play();
+            audio.clip = echoSF;
             audio.Play();
         }
         Debug.Log("Echoed");
@@ -121,6 +127,7 @@ public class Ship : MonoBehaviour
     {
         if (other.tag == "Enemy")
         {
+            //Echo();
             Debug.Log("triggered ECHO");
         }
     }

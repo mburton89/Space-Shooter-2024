@@ -194,7 +194,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 839c432aec0a7c943bd175f9a571a80e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audio: {fileID: 0}
+  audio: {fileID: 6624794758499611919, guid: c2b96875fca2e754984796065ffe8c70, type: 3}
   rigidBody2D: {fileID: 3636565273772229247}
   projectilePrefab: {fileID: 8570067953148998177, guid: a6c8d928f2140fb4486fa97e2b37089c, type: 3}
   projectileSpawnPoint: {fileID: 3325326089058386502}
@@ -207,17 +207,12 @@ MonoBehaviour:
   currentSpeed: 0
   currentHealth: 3
   canShoot: 0
-  manager: {fileID: 0}
-  homeBase: {fileID: 0}
   isGunner: 0
   sprites:
   - {fileID: 21300000, guid: 7ed854f7684396d4f9dcddf330af5613, type: 3}
   - {fileID: 21300000, guid: f82dd3bb08a27a445bbd0d559563b035, type: 3}
   spriteRenderer: {fileID: 3690464650249783491}
   revealTime: 4
-  recallBird: 6
-  isMoth: 1
-  isOwl: 0
 --- !u!1001 &484412738130078014
 PrefabInstance:
   m_ObjectHideFlags: 0

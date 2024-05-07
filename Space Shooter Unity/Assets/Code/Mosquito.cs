@@ -42,10 +42,7 @@ public class Mosquito : MonoBehaviour
             }
 
 
-            UniversalSound.clip = collect;
-            UniversalSound.spatialBlend = 0;
-            UniversalSound.volume = collectVolume;
-            UniversalSound.Play();
+            SoundFXManager.Instance.PlaySoundFXClip(collect, transform, collectVolume);   
 
             this.gameObject.SetActive(false);
             Destroy(this);

@@ -9,7 +9,7 @@ public class HUD : MonoBehaviour
     public static HUD Instance;
 
     public Image healthBarFill;
-    public TextMeshProUGUI waveText;
+  
 
     void Awake()
     {
@@ -22,8 +22,5 @@ public class HUD : MonoBehaviour
         healthBarFill.fillAmount = healthAmount;
     }
 
-    public void DisplayWave(int currentWave)
-    {
-        waveText.SetText("Wave " + currentWave);
-    }
+   
 }
