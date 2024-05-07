@@ -9897,7 +9897,7 @@ GameObject:
   - component: {fileID: 100119788553806797}
   - component: {fileID: 6157728584274013462}
   m_Layer: 0
-  m_Name: Player Ship 1
+  m_Name: Player Bat
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
