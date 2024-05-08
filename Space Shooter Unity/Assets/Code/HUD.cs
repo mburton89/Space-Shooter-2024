@@ -9,7 +9,9 @@ public class HUD : MonoBehaviour
     public static HUD Instance;
 
     public Image healthBarFill;
-  
+
+    int points;
+    public TextMeshProUGUI pointsText;
 
     void Awake()
     {
@@ -22,5 +24,10 @@ public class HUD : MonoBehaviour
         healthBarFill.fillAmount = healthAmount;
     }
 
-   
+    public void AddPoint(int pointsToGive)
+    {
+        points += pointsToGive;
+
+        pointsText.SetText("Points: " + points);
+    }
 }
