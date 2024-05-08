@@ -1,10 +1,14 @@
+using DG.Tweening.Core.Easing;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Collectible : MonoBehaviour
 {
-    public int pointsToGive = 1;
+    public bool refuelBoost;
+
+    public AudioClip collectSound;
+    public float collectVolume = 1f;
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -16,7 +20,22 @@ public class Collectible : MonoBehaviour
 
     void GetCollected()
     {
-        HUD.Instance.AddPoint(pointsToGive);
+        if (refuelBoost)
+        {
+            if (GameManager.Instance.dashBarValue <= .66f)
+            {
+                GameManager.Instance.dashBarValue += .33f;
+            }
+            else if (GameManager.Instance.dashBarValue > .66f)
+            {
+                GameManager.Instance.dashBarValue = 1;
+            }
+
+            HUD.Instance.DisplayDashAmount(GameManager.Instance.dashBarValue, 1);
+        }
+        
+        SoundFXManager.Instance.PlaySoundFXClip(collectSound, transform, collectVolume);
+
         Destroy(gameObject);
     }
 }

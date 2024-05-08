@@ -6,7 +6,7 @@ public class EnemyShip : Ship
 {
     Transform target;
 
-    public GameManager manager;
+    GameManager manager;
 
 
     public GameObject owlHomeBase;
@@ -40,7 +40,7 @@ public class EnemyShip : Ship
     // Start is called before the first frame update
     void Start()
     {
-        manager = FindAnyObjectByType<GameManager>();
+        manager = GameManager.Instance;
         //homeBase = GetComponent<GameObject>().; //GameObject.FindGameObjectsWithTag("HomeBase");
         GoHome();
         target = FindObjectOfType<PlayerShip>().transform;

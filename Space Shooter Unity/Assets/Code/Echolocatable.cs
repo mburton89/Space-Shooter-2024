@@ -10,17 +10,21 @@ public class Echolocatable : MonoBehaviour
 
     public float secondsRevelead = 2f;
 
-    bool canSwitchForms;
+    bool canSwitchForms = true;
+
+    AudioSource revealedSound;
 
     private void Start()
     {
         trueForm.transform.localScale = Vector3.zero;
+        revealedSound = GetComponent<AudioSource>();
     }
 
-    public void SwitchForms()
+    public void TrySwitchForms()
     {
         if (canSwitchForms)
         {
+            revealedSound.Play();
             StartCoroutine(SwitchFormsCo());
         }
     }
@@ -40,7 +44,7 @@ public class Echolocatable : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            StartCoroutine(SwitchFormsCo());
+            TrySwitchForms();
         }
     }
 }

@@ -115,12 +115,12 @@ public class Ship : MonoBehaviour
     {
         if (echoParticleSystem != null)
         {
-            Debug.Log("Echo1");
             echoParticleSystem.Play();
             audio.clip = echoSF;
             audio.Play();
+
+            DarknessOverlay.Instance.Reset();
         }
-        Debug.Log("Echoed");
     }
 
     private void OnParticleCollision(GameObject other)
