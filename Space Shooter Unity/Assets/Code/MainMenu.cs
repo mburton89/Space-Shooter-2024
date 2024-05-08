@@ -9,21 +9,51 @@ public class MainMenu : MonoBehaviour
 {
     //You wrote the wrong script, fool!
 
-    public Button startButton;
+    public Button level1Button;
+    public Button level2Button;
+    public Button level3Button;
+    public Button gotItButton;
     //public TextMeshProUGUI highestWaveText;
 
-
-
+    public GameObject howToPlayMenu;
     void Start()
     {
-        startButton.onClick.AddListener(HandleStartButtonClicked);
+        level1Button.onClick.AddListener(HandleLevel1Clicked);
+        level2Button.onClick.AddListener(HandleLevel2Clicked);
+        level3Button.onClick.AddListener(HandleLevel3Clicked);
 
-        int highestWave = PlayerPrefs.GetInt("highestWave");
+        if (PlayerPrefs.GetInt("HasPlayed") != 1)
+        {
+            PlayerPrefs.SetInt("HasPlayed", 1);
+            howToPlayMenu.SetActive(true);
+            gotItButton.onClick.AddListener(HandleGotItPressed);
+        }
+        else
+        { 
+            Destroy(howToPlayMenu);
+        }
+
+        //int highestWave = PlayerPrefs.GetInt("highestWave");
         //highestWaveText.SetText("Highest Wave: " + highestWave);
     }
 
-    void HandleStartButtonClicked()
+    void HandleLevel1Clicked()
     {
         SceneManager.LoadScene(1);
+    }
+
+    void HandleLevel2Clicked()
+    {
+        SceneManager.LoadScene(2);
+    }
+
+    void HandleLevel3Clicked()
+    {
+        SceneManager.LoadScene(3);
+    }
+
+    void HandleGotItPressed()
+    {
+        Destroy(howToPlayMenu);
     }
 }

@@ -10,6 +10,8 @@ public class Timer : MonoBehaviour
     public float timeToNextNight = 3.0f;
     private float rotateZ;
 
+    bool roundHasEnded;
+
     private void Start()
     {
         rotateZ = -180 / timeToSunrise;
@@ -19,7 +21,7 @@ public class Timer : MonoBehaviour
     {
         // function
 
-        if (timeToSunrise <= 0.0f)
+        if (timeToSunrise <= 0.0f && !roundHasEnded)
         {
             RoundEnd();
         }
@@ -38,6 +40,10 @@ public class Timer : MonoBehaviour
         // start timer before next round
         // have bat return to roost in cutscene *TODO*
         
+        roundHasEnded = true;
+
+        HUD.Instance.WinLevel();
+
         timeToNextNight -= Time.deltaTime;
         
         if (timeToNextNight <= 0.0f)

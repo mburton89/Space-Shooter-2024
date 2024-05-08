@@ -125,7 +125,7 @@ MonoBehaviour:
   mosquitoAudio: {fileID: 84260122841676154}
   UniversalSound: {fileID: 84260122841676154}
   buzz: {fileID: 8300000, guid: 85e325a7a4df40541a81abef219733c9, type: 3}
-  collect: {fileID: 8300000, guid: 7612e06f5f30ea14c9a8bb674e3c8036, type: 3}
+  collect: {fileID: 8300000, guid: 7f61b0243d3f0024d9cbff18dd5ef3f8, type: 3}
   collectVolume: 1
 --- !u!82 &84260122841676154
 AudioSource:

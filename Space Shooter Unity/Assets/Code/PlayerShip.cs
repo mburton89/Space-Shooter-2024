@@ -117,7 +117,9 @@ public class PlayerShip : Ship
             playerAnimator.SetTrigger("dive");
 
             GameManager.dashBarValue -= .33f;
-            
+
+            HUD.Instance.DisplayDashAmount(GameManager.Instance.dashBarValue, 1);
+
             // Dash Sound
             dashSF.Play();
 

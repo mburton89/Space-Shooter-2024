@@ -6,6 +6,8 @@ using UnityEngine;
 public class Ship : MonoBehaviour
 {
     public AudioSource audio;
+    public AudioClip damageSF;
+    public AudioClip echoSF;
     public Rigidbody2D rigidBody2D;
     public GameObject projectilePrefab;
     public Transform projectileSpawnPoint;
@@ -85,6 +87,8 @@ public class Ship : MonoBehaviour
         if (GetComponent<PlayerShip>())
         { 
             HUD.Instance.DisplayHealth(currentHealth, maxHealth);
+            audio.clip = damageSF;
+            audio.Play();
         }
 
         if (currentHealth <= 0)
@@ -111,11 +115,12 @@ public class Ship : MonoBehaviour
     {
         if (echoParticleSystem != null)
         {
-            Debug.Log("Echo1");
             echoParticleSystem.Play();
+            audio.clip = echoSF;
             audio.Play();
+
+            DarknessOverlay.Instance.Reset();
         }
-        Debug.Log("Echoed");
     }
 
     private void OnParticleCollision(GameObject other)

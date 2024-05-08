@@ -10,7 +10,6 @@ public class GameManager : MonoBehaviour
     public float points;
     public float mothsGotten;
 
-
     private void Awake()
     {
         Instance = this;
