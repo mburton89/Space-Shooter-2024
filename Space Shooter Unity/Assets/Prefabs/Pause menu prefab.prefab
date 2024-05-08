@@ -1528,6 +1528,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pauseMenu: {fileID: 8143087995011969499}
   Soundtrack: {fileID: 0}
+  masterVolumeSlider: {fileID: 1268833176984367962}
+  musicVolumeSlider: {fileID: 6991079162394818535}
+  sfxVolumeSlider: {fileID: 8162251848864127038}
+  ambienceVolumeSlider: {fileID: 6850246926529474842}
 --- !u!1 &2848845204718437697
 GameObject:
   m_ObjectHideFlags: 0
@@ -1546,7 +1550,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &7613096709810344837
 RectTransform:
   m_ObjectHideFlags: 0

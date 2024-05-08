@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class PauseSystem : MonoBehaviour
@@ -8,10 +9,33 @@ public class PauseSystem : MonoBehaviour
     //private GameObject[] pauseMenu;
     [SerializeField] GameObject pauseMenu;
     public AudioSource Soundtrack;
-    
+
+    public Slider masterVolumeSlider;
+    public Slider musicVolumeSlider;
+    public Slider sfxVolumeSlider;
+    public Slider ambienceVolumeSlider;
 
     bool isPaused = false;
-    
+
+    SoundMixerManager soundMixerManager;
+
+    private void Start()
+    {
+        soundMixerManager = FindFirstObjectByType<SoundMixerManager>();
+
+        soundMixerManager.setMasterVolume(PlayerPrefs.GetFloat("MasterVolume"));
+        masterVolumeSlider.value = PlayerPrefs.GetFloat("MasterVolume");
+
+        soundMixerManager.setMusicVolume(PlayerPrefs.GetFloat("MusicVolume"));
+        musicVolumeSlider.value = PlayerPrefs.GetFloat("MusicVolume");
+
+        soundMixerManager.setSoundFXVolume(PlayerPrefs.GetFloat("SFXVolume"));
+        sfxVolumeSlider.value = PlayerPrefs.GetFloat("SFXVolume");
+
+        soundMixerManager.setAmbientVolume(PlayerPrefs.GetFloat("AmbienceVolume"));
+        ambienceVolumeSlider.value = PlayerPrefs.GetFloat("AmbienceVolume");
+    }
+
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
