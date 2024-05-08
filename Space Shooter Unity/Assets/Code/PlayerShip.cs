@@ -114,7 +114,7 @@ public class PlayerShip : Ship
         {
             isDashing = true;
 
-            playerAnimator.SetTrigger("dive");
+            //playerAnimator.SetTrigger("dive");
 
             GameManager.dashBarValue -= .33f;
 
