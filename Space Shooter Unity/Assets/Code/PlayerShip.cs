@@ -28,68 +28,18 @@ public class PlayerShip : Ship
 
     void Update()
     {
-        float moveHorizontal = Input.GetAxis("Horizontal");
-        float moveVertical = Input.GetAxis("Vertical");
-
-        // Calculate movement direction
-        Vector2 movement = new Vector2(moveHorizontal, moveVertical).normalized;
-
-        // Store the current velocity
-        Vector2 currentVelocity = rigidBody2D.velocity;
-
-        // Check if there's input for movement
-        if (movement != Vector2.zero)
-        {
-            // Move the player
-            rigidBody2D.velocity = movement * moveSpeed;
-
-            // Rotate the player
-            float angle = (Mathf.Atan2(movement.y, movement.x) * Mathf.Rad2Deg) - 90;
-            rigidBody2D.rotation = angle;
-
-            // Reset stopMoveFeature since the player is moving
-            stopMoveFeature = false;
-        }
-        else if (!stopMoveFeature && currentVelocity.magnitude > 0f && Vector2.Dot(currentVelocity, rigidBody2D.velocity) <= 0f)
-        {
-            // If there's no input and the ship was previously moving, and it's now starting to slow down
-            // Set velocity to zero immediately
-            rigidBody2D.velocity = Vector2.zero;
-
-            // Set stopMoveFeature to true to prevent further stopping until player starts moving again
-            stopMoveFeature = true;
-        }
+        //HandleKeyboard();
+        FollowMouse();
 
         if (Input.GetMouseButton(1))
         {
-            if (isDashing == false)
-            {
-                StartCoroutine(Dash(rigidBody2D));
-            }
+            Thrust();
         }
+
         if (Input.GetMouseButtonDown(0))
         {
             Echo();
-            //Shoot();
         }
-
-        
-        if (GameManager.dashBarValue <= .33f && stopMoveFeature == false)
-        {
-            moveSpeed = tempMoveSpeed / 2f;
-        }
-        else if (GameManager.dashBarValue >= .33f && GameManager.dashBarValue <= .66f && stopMoveFeature == false)
-        {
-            moveSpeed = tempMoveSpeed / 1.5f;
-        }
-        else if (GameManager.dashBarValue > .66f && stopMoveFeature == false)
-        {
-            moveSpeed = tempMoveSpeed;
-        }
-
-
-
-        //FollowMouse();
     }
 
     void FollowMouse()
@@ -175,6 +125,68 @@ public class PlayerShip : Ship
         else
         {
             Debug.Log("No more stamina :(");
+        }
+    }
+
+    void HandleKeyboard()
+    {
+        float moveHorizontal = Input.GetAxis("Horizontal");
+        float moveVertical = Input.GetAxis("Vertical");
+
+        // Calculate movement direction
+        Vector2 movement = new Vector2(moveHorizontal, moveVertical).normalized;
+
+        // Store the current velocity
+        Vector2 currentVelocity = rigidBody2D.velocity;
+
+        // Check if there's input for movement
+        if (movement != Vector2.zero)
+        {
+            // Move the player
+            rigidBody2D.velocity = movement * moveSpeed;
+
+            // Rotate the player
+            float angle = (Mathf.Atan2(movement.y, movement.x) * Mathf.Rad2Deg) - 90;
+            rigidBody2D.rotation = angle;
+
+            // Reset stopMoveFeature since the player is moving
+            stopMoveFeature = false;
+        }
+        else if (!stopMoveFeature && currentVelocity.magnitude > 0f && Vector2.Dot(currentVelocity, rigidBody2D.velocity) <= 0f)
+        {
+            // If there's no input and the ship was previously moving, and it's now starting to slow down
+            // Set velocity to zero immediately
+            rigidBody2D.velocity = Vector2.zero;
+
+            // Set stopMoveFeature to true to prevent further stopping until player starts moving again
+            stopMoveFeature = true;
+        }
+
+        if (Input.GetMouseButton(1))
+        {
+            if (isDashing == false)
+            {
+                StartCoroutine(Dash(rigidBody2D));
+            }
+        }
+        if (Input.GetMouseButtonDown(0))
+        {
+            Echo();
+            //Shoot();
+        }
+
+
+        if (GameManager.dashBarValue <= .33f && stopMoveFeature == false)
+        {
+            moveSpeed = tempMoveSpeed / 2f;
+        }
+        else if (GameManager.dashBarValue >= .33f && GameManager.dashBarValue <= .66f && stopMoveFeature == false)
+        {
+            moveSpeed = tempMoveSpeed / 1.5f;
+        }
+        else if (GameManager.dashBarValue > .66f && stopMoveFeature == false)
+        {
+            moveSpeed = tempMoveSpeed;
         }
     }
 }

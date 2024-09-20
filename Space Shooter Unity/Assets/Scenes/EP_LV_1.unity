@@ -37140,7 +37140,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6157728584274013462, guid: a8a9556083e42f540925f401c5310f2f, type: 3}
       propertyPath: maxSpeed
-      value: 15
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 6157728584274013462, guid: a8a9556083e42f540925f401c5310f2f, type: 3}
+      propertyPath: acceleration
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8672401352199327306, guid: a8a9556083e42f540925f401c5310f2f, type: 3}
+      propertyPath: m_LinearDrag
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
