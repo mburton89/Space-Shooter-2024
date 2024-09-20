@@ -20,6 +20,8 @@ public class PlayerShip : Ship
 
     private bool stopMoveFeature = false;
 
+    [SerializeField] private bl_Joystick Joystick;//Joystick reference for assign in inspector
+
     void Start()
     {
         GameManager = GameManager.Instance;
@@ -29,17 +31,19 @@ public class PlayerShip : Ship
     void Update()
     {
         //HandleKeyboard();
-        FollowMouse();
+        //FollowMouse();
 
-        if (Input.GetMouseButton(1))
+/*        if (Input.GetMouseButton(1))
         {
             Thrust();
-        }
+        }*/
 
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             Echo();
         }
+
+        HandleJoystick();
     }
 
     void FollowMouse()
@@ -188,5 +192,22 @@ public class PlayerShip : Ship
         {
             moveSpeed = tempMoveSpeed;
         }
+    }
+
+    void HandleJoystick()
+    {
+        //Step #2
+        //Change Input.GetAxis (or the input that you using) to Joystick.Vertical or Joystick.Horizontal
+        float v = Joystick.Vertical; //get the vertical value of joystick
+        float h = Joystick.Horizontal;//get the horizontal value of joystick
+
+        //in case you using keys instead of axis (due keys are bool and not float) you can do this:
+        //bool isKeyPressed = (Joystick.Horizontal > 0) ? true : false;
+
+
+
+        Vector2 directionToFace = new Vector2(h, v);
+        transform.up = directionToFace;
+        Thrust(Mathf.Abs(v) + Mathf.Abs(h));
     }
 }

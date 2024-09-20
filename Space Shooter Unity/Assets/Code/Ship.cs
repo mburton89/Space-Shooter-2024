@@ -29,8 +29,6 @@ public class Ship : MonoBehaviour
 
     public bool canShoot;
 
-  
-
     private void Awake()
     {
         thrustParticles = GetComponentInChildren<ParticleSystem>();
@@ -50,7 +48,7 @@ public class Ship : MonoBehaviour
     {
         rigidBody2D.AddForce(transform.up * acceleration);
         if (thrustParticles != null)
-       { 
+        {
             //thrustParticles.Emit(1);
         }
     }
@@ -60,7 +58,7 @@ public class Ship : MonoBehaviour
         rigidBody2D.AddForce(transform.up * acceleration * strength);
         if (thrustParticles != null)
         {
-            thrustParticles.Emit(1);
+            //thrustParticles.Emit(1);
         }
     }
 
