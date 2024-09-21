@@ -31,7 +31,7 @@ public class CreatureSpawner : MonoBehaviour
 
             Vector3 spawnPosition = new Vector3(randX, randY, 0);
 
-            print(spawnPosition);
+            //print(spawnPosition);
 
             Instantiate(owlPrefab, spawnPosition, transform.rotation, transform);
         }

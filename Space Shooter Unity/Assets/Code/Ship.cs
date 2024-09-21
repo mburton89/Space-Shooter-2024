@@ -95,6 +95,17 @@ public class Ship : MonoBehaviour
         }   
     }
 
+    public void RegainHealth(int health)
+    {
+        Debug.Log("health " + health);
+       if(currentHealth < maxHealth)
+        {
+            currentHealth += health;
+            HUD.Instance.DisplayHealth(currentHealth, maxHealth);
+        }
+
+    }
+
     public void Explode()
     {
         Instantiate(Resources.Load("Explosion"), transform.position, transform.rotation);

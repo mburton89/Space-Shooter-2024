@@ -30,8 +30,8 @@ public class PlayerShip : Ship
 
     void Update()
     {
-        //HandleKeyboard();
-        //FollowMouse();
+        HandleKeyboard();
+        FollowMouse();
 
 /*        if (Input.GetMouseButton(1))
         {
@@ -43,7 +43,7 @@ public class PlayerShip : Ship
             Echo();
         }
 
-        HandleJoystick();
+        //HandleJoystick();
     }
 
     void FollowMouse()
