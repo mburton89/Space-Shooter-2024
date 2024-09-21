@@ -196,6 +196,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audio: {fileID: 0}
+  damageSF: {fileID: 0}
+  echoSF: {fileID: 0}
   rigidBody2D: {fileID: 2217453976648226873}
   projectilePrefab: {fileID: 8570067953148998177, guid: a6c8d928f2140fb4486fa97e2b37089c, type: 3}
   projectileSpawnPoint: {fileID: 4149138876064926411}
@@ -206,15 +208,25 @@ MonoBehaviour:
   maxHealth: 3
   fireRate: 0
   projectileSpeed: 0
+  explosionPrefab: {fileID: 4012437149324200362, guid: 072f85819526e7f4998c3952d3086fe3, type: 3}
   currentSpeed: 0
   currentHealth: 3
   canShoot: 0
+  owlHomeBase: {fileID: 0}
+  MothSpots: []
   isGunner: 0
   sprites:
   - {fileID: 1611999124, guid: 93702e4e2b1057d41bae6d6452e37079, type: 3}
   - {fileID: 1553554371, guid: f86a3ee5c98d4c54cbbf568ae87951a1, type: 3}
   spriteRenderer: {fileID: 179652443001696134}
   revealTime: 1
+  recallBird: 3
+  isMoth: 0
+  isOwl: 0
+  animationClips: []
+  anim: {fileID: 0}
+  shadow: {fileID: 0}
+  enemy: {fileID: 0}
 --- !u!82 &2790830240962037772
 AudioSource:
   m_ObjectHideFlags: 0

@@ -249,6 +249,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 5384615520022518534}
     - target: {fileID: 446460227941100274, guid: ddf537ab6d5d0d34f84509024429912c, type: 3}
+      propertyPath: explosionPrefab
+      value: 
+      objectReference: {fileID: 4012437149324200362, guid: 072f85819526e7f4998c3952d3086fe3, type: 3}
+    - target: {fileID: 446460227941100274, guid: ddf537ab6d5d0d34f84509024429912c, type: 3}
       propertyPath: sprites.Array.size
       value: 2
       objectReference: {fileID: 0}
