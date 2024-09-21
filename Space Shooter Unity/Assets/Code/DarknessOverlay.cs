@@ -9,7 +9,7 @@ public class DarknessOverlay : MonoBehaviour
 
     public float fadeInSpeed = 0.05f; // Adjust the speed of fading as needed
     private Image image;
-    public float targetAlpha = 0.75f;
+    public float targetAlpha = 0.6f;
 
     void Start()
     {

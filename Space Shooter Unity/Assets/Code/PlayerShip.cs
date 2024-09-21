@@ -44,6 +44,7 @@ public class PlayerShip : Ship
         }
 
         HandleJoystick();
+        HandleScreenTaps();
     }
 
     void FollowMouse()
@@ -209,5 +210,22 @@ public class PlayerShip : Ship
         Vector2 directionToFace = new Vector2(h, v);
         transform.up = directionToFace;
         Thrust(Mathf.Abs(v) + Mathf.Abs(h));
+    }
+
+    void HandleScreenTaps()
+    {
+        if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
+        {
+            // Get the touch position
+            Vector2 touchPosition = Input.GetTouch(0).position;
+
+            // Check if the touch is on the right side of the screen
+            if (touchPosition.x > Screen.width / 2)
+            {
+                // The user tapped the right side of the screen
+                Echo();
+                // Call your method or trigger your event here
+            }
+        }
     }
 }
