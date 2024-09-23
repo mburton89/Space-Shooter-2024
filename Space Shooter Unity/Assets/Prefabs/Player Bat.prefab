@@ -10010,6 +10010,7 @@ MonoBehaviour:
   maxHealth: 4
   fireRate: 0
   projectileSpeed: 600
+  explosionPrefab: {fileID: 8673798306606761942, guid: 689895e979b4d6149bd0159486f7be3e, type: 3}
   currentSpeed: 0
   currentHealth: 2
   canShoot: 0
@@ -10022,6 +10023,7 @@ MonoBehaviour:
   isInvincibleDuringDash: 1
   dashForce: 100
   playerAnimator: {fileID: 0}
+  Joystick: {fileID: 0}
 --- !u!1 &5457017923115740930
 GameObject:
   m_ObjectHideFlags: 0

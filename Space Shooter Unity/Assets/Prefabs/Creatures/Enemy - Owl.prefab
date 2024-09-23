@@ -393,6 +393,7 @@ MonoBehaviour:
   maxHealth: 3
   fireRate: 0
   projectileSpeed: 0
+  explosionPrefab: {fileID: 4012437149324200362, guid: 072f85819526e7f4998c3952d3086fe3, type: 3}
   currentSpeed: 0
   currentHealth: 0
   canShoot: 0

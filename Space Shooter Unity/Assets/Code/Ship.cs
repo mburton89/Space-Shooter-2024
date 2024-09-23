@@ -21,6 +21,7 @@ public class Ship : MonoBehaviour
     public int maxHealth;
     public float fireRate;
     public float projectileSpeed;
+    public GameObject explosionPrefab;
 
     public float currentSpeed;
     [HideInInspector] public int currentHealth;
@@ -97,7 +98,7 @@ public class Ship : MonoBehaviour
 
     public void Explode()
     {
-        Instantiate(Resources.Load("Explosion"), transform.position, transform.rotation);
+        Instantiate(explosionPrefab, transform.position, transform.rotation);
 
         //FindObjectOfType<EnemyShipSpawner>().CountEnemyShips();
 
