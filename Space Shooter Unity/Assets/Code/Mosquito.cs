@@ -17,6 +17,8 @@ public class Mosquito : MonoBehaviour
         mosquitoAudio.clip = buzz;
         mosquitoAudio.spatialBlend = 1;
         mosquitoAudio.Play();
+
+        Debug.Log("Mosquito Spawn");
     }
 
     // Update is called once per frame
@@ -28,21 +30,28 @@ public class Mosquito : MonoBehaviour
     
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        Debug.Log(collision.gameObject);
 
         if (collision.CompareTag("Player"))
         {
-
-            if (gameManager.dashBarValue <= .66f)
-            {
-                gameManager.dashBarValue += .33f;
-            }
-            else if (gameManager.dashBarValue > .66f)
-            {
-                gameManager.dashBarValue = 1;
-            }
-
-
+            collision.gameObject.GetComponent<PlayerShip>().RegainHealth(1);
+           
             SoundFXManager.Instance.PlaySoundFXClip(collect, transform, collectVolume);   
+
+            this.gameObject.SetActive(false);
+            Destroy(this);
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        Debug.Log(collision.gameObject);
+
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            collision.gameObject.GetComponent<PlayerShip>().RegainHealth(1);
+
+            SoundFXManager.Instance.PlaySoundFXClip(collect, transform, collectVolume);
 
             this.gameObject.SetActive(false);
             Destroy(this);

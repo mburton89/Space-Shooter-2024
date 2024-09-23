@@ -14,6 +14,7 @@ public class Collectible : MonoBehaviour
     {
         if (collision.gameObject.GetComponent<PlayerShip>())
         {
+            collision.gameObject.GetComponent<PlayerShip>().RegainHealth(1);
             GetCollected();
         }
     }
