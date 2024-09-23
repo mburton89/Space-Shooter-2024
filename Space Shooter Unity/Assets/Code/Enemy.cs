@@ -64,6 +64,8 @@ public class Enemy : Ship
 
     void FollowTarget()
     {
+        if (target == null) return; 
+
         Vector2 directionToFace = new Vector2(target.position.x - transform.position.x, target.position.y - transform.position.y);
         transform.up = directionToFace;
         Thrust();
@@ -71,6 +73,7 @@ public class Enemy : Ship
 
     void RunAway()
     {
+        if (target == null) return;
         Vector2 directionToFace = new Vector2(target.position.x + transform.position.x, target.position.y + transform.position.y);
         transform.up = directionToFace;
         Thrust();

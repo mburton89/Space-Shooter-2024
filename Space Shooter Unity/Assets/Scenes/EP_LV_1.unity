@@ -297,11 +297,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 22406132, guid: 7973d81b61b491640b7a0d00c9de83d3, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 25
+      value: 35
       objectReference: {fileID: 0}
     - target: {fileID: 22406132, guid: 7973d81b61b491640b7a0d00c9de83d3, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 20
+      value: 25
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4722,9 +4722,37 @@ PrefabInstance:
       propertyPath: targetAlpha
       value: 0.6
       objectReference: {fileID: 0}
+    - target: {fileID: 1029299067076896098, guid: 058aa0e8c45fec14a8eaf28a584de4a0, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1029299067076896098, guid: 058aa0e8c45fec14a8eaf28a584de4a0, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1029299067076896098, guid: 058aa0e8c45fec14a8eaf28a584de4a0, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1130015273278446206, guid: 058aa0e8c45fec14a8eaf28a584de4a0, type: 3}
       propertyPath: m_RaycastTarget
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372306340191027560, guid: 058aa0e8c45fec14a8eaf28a584de4a0, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372306340191027560, guid: 058aa0e8c45fec14a8eaf28a584de4a0, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372306340191027560, guid: 058aa0e8c45fec14a8eaf28a584de4a0, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372306340191027560, guid: 058aa0e8c45fec14a8eaf28a584de4a0, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 53.80005
       objectReference: {fileID: 0}
     - target: {fileID: 3659980666679299755, guid: 058aa0e8c45fec14a8eaf28a584de4a0, type: 3}
       propertyPath: m_Name
@@ -4809,6 +4837,10 @@ PrefabInstance:
     - target: {fileID: 6202081495093689309, guid: 058aa0e8c45fec14a8eaf28a584de4a0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7341000014222651433, guid: 058aa0e8c45fec14a8eaf28a584de4a0, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -51.680054
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5886,7 +5918,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: 729032381, guid: 27c6e98ab28b0804cb2621e5f451d1f2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -37271,18 +37303,6 @@ PrefabInstance:
       propertyPath: Joystick
       value: 
       objectReference: {fileID: 33636371}
-    - target: {fileID: 6157728584274013462, guid: a8a9556083e42f540925f401c5310f2f, type: 3}
-      propertyPath: maxSpeed
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 6157728584274013462, guid: a8a9556083e42f540925f401c5310f2f, type: 3}
-      propertyPath: acceleration
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 8672401352199327306, guid: a8a9556083e42f540925f401c5310f2f, type: 3}
-      propertyPath: m_LinearDrag
-      value: 4
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

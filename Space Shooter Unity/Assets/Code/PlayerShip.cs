@@ -22,29 +22,46 @@ public class PlayerShip : Ship
 
     [SerializeField] private bl_Joystick Joystick;//Joystick reference for assign in inspector
 
+    bool isMobile;
+
+    public float joystickSpeedBuffer;
+
     void Start()
     {
         GameManager = GameManager.Instance;
         tempMoveSpeed = moveSpeed;
+
+        if (Application.platform == RuntimePlatform.WindowsPlayer || Application.platform == RuntimePlatform.WindowsEditor)
+        {
+            isMobile = false;
+            Joystick.gameObject.SetActive(false);
+        }
+        else if (Application.platform == RuntimePlatform.OSXPlayer || Application.platform == RuntimePlatform.OSXEditor)
+        {
+            isMobile = true;
+        }
     }
 
     void Update()
     {
-        //HandleKeyboard();
-        //FollowMouse();
-
-/*        if (Input.GetMouseButton(1))
+        if (isMobile)
         {
-            Thrust();
-        }*/
-
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            Echo();
+            HandleJoystick();
+            HandleScreenTaps();
         }
-
-        HandleJoystick();
-        HandleScreenTaps();
+        else
+        { 
+            HandleKeyboard();
+            FollowMouse();
+            if (Input.GetMouseButton(1))
+            {
+                Thrust();
+            }
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                Echo();
+            }
+        }
     }
 
     void FollowMouse()
@@ -167,13 +184,13 @@ public class PlayerShip : Ship
             stopMoveFeature = true;
         }
 
-        if (Input.GetMouseButton(1))
-        {
-            if (isDashing == false)
-            {
-                StartCoroutine(Dash(rigidBody2D));
-            }
-        }
+        //if (Input.GetMouseButton(1))
+        //{
+        //    if (isDashing == false)
+        //    {
+        //        StartCoroutine(Dash(rigidBody2D));
+        //    }
+        //}
         if (Input.GetMouseButtonDown(0))
         {
             Echo();
@@ -209,7 +226,7 @@ public class PlayerShip : Ship
 
         Vector2 directionToFace = new Vector2(h, v);
         transform.up = directionToFace;
-        Thrust(Mathf.Abs(v) + Mathf.Abs(h));
+        Thrust((Mathf.Abs(v) + Mathf.Abs(h)) * joystickSpeedBuffer);
     }
 
     void HandleScreenTaps()
