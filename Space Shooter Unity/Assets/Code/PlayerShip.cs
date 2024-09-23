@@ -36,7 +36,7 @@ public class PlayerShip : Ship
             isMobile = false;
             Joystick.gameObject.SetActive(false);
         }
-        else if (Application.platform == RuntimePlatform.OSXPlayer || Application.platform == RuntimePlatform.OSXEditor)
+        else
         {
             isMobile = true;
         }
