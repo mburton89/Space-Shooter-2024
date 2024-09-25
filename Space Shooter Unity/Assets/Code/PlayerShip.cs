@@ -31,14 +31,31 @@ public class PlayerShip : Ship
         GameManager = GameManager.Instance;
         tempMoveSpeed = moveSpeed;
 
-        if (Application.platform == RuntimePlatform.WindowsPlayer || Application.platform == RuntimePlatform.WindowsEditor)
+        if (Application.platform == RuntimePlatform.WebGLPlayer)
         {
+            // Check if it's running on a mobile device or computer
+            if (Application.isMobilePlatform)
+            {
+                isMobile = true;
+                Joystick.gameObject.SetActive(true); // Activate joystick for mobile
+            }
+            else
+            {
+                isMobile = false;
+                Joystick.gameObject.SetActive(false); // Deactivate joystick for desktop
+            }
+        }
+        else if (Application.platform == RuntimePlatform.WindowsPlayer || Application.platform == RuntimePlatform.WindowsEditor || Application.platform == RuntimePlatform.OSXPlayer || Application.platform == RuntimePlatform.OSXEditor)
+        {
+            // For standalone builds (Windows or Mac) and Editor
             isMobile = false;
-            Joystick.gameObject.SetActive(false);
+            Joystick.gameObject.SetActive(false); // Deactivate joystick for desktop
         }
         else
         {
+            // Default case for mobile platforms (if not WebGL)
             isMobile = true;
+            Joystick.gameObject.SetActive(true); // Activate joystick for mobile
         }
     }
 
@@ -231,17 +248,25 @@ public class PlayerShip : Ship
 
     void HandleScreenTaps()
     {
-        if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
+        if (Input.touchCount > 0)
         {
-            // Get the touch position
-            Vector2 touchPosition = Input.GetTouch(0).position;
-
-            // Check if the touch is on the right side of the screen
-            if (touchPosition.x > Screen.width / 2)
+            for (int i = 0; i < Input.touchCount; i++)
             {
-                // The user tapped the right side of the screen
-                Echo();
-                // Call your method or trigger your event here
+                Touch touch = Input.GetTouch(i);
+                // Check if the current touch just began
+                if (touch.phase == TouchPhase.Began)
+                {
+                    // Get the touch position
+                    Vector2 touchPosition = touch.position;
+
+                    // Check if the touch is on the right side of the screen
+                    if (touchPosition.x > Screen.width / 2)
+                    {
+                        // The user tapped the right side of the screen
+                        Echo();
+                        // Call your method or trigger your event here
+                    }
+                }
             }
         }
     }
