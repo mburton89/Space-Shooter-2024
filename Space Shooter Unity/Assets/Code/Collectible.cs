@@ -6,6 +6,7 @@ using UnityEngine;
 public class Collectible : MonoBehaviour
 {
     public bool refuelBoost;
+    public bool giveHealth;
 
     public AudioClip collectSound;
     public float collectVolume = 1f;
@@ -14,7 +15,10 @@ public class Collectible : MonoBehaviour
     {
         if (collision.gameObject.GetComponent<PlayerShip>())
         {
-            collision.gameObject.GetComponent<PlayerShip>().RegainHealth(1);
+            if(refuelBoost)
+            {
+                collision.gameObject.GetComponent<PlayerShip>().RegainHealth(1);
+            }
             GetCollected();
         }
     }
