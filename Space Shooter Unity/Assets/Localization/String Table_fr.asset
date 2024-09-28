@@ -22,6 +22,82 @@ MonoBehaviour:
     m_Localized: Parc Echo
     m_Metadata:
       m_Items: []
+  - m_Id: 1518957417644032
+    m_Localized: Niveau 1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1521121338769408
+    m_Localized: "Papillons mang\xE9: "
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1521200724361216
+    m_Localized: Reprendre
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1521367171121152
+    m_Localized: Recommencer
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1521446879674368
+    m_Localized: Menu
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1521540551065600
+    m_Localized: Quitter
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1521645958119424
+    m_Localized: Volume principal
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1521773938917376
+    m_Localized: Effet sonore
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1521894109921280
+    m_Localized: Musique
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1522095897886720
+    m_Localized: Ambiance
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1522196213055488
+    m_Localized: Instructions
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1522303050366976
+    m_Localized: Avancer avec joystick
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1522354753552384
+    m_Localized: "Appuyer c\xF4t\xE9 droit pour \xE9cholocaliser"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1522396948250624
+    m_Localized: Manger pour gagner des points
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1522470851887104
+    m_Localized: Manger pour gagner des PV
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1522549381840896
+    m_Localized: "\xC9chappe-toi! Les hiboux TE MANGENT!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1522586677592064
+    m_Localized: C'est bon!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1530272546734080
+    m_Localized: "Niveau compl\xE9t\xE9"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1531204412030976
+    m_Localized: "R\xE9essayer"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

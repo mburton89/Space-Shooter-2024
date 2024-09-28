@@ -42,7 +42,7 @@ public class HUD : MonoBehaviour
     {
         points += pointsToGive;
 
-        pointsText.SetText("Moths Eaten: " + points);
+        pointsText.SetText(points.ToString());
     }
 
     public void DisplayDashAmount(float currentDash, float maxDash)
