@@ -257,6 +257,7 @@ GameObject:
   - component: {fileID: 6193181518286046716}
   - component: {fileID: 1329787750253612760}
   - component: {fileID: 8811849086950842002}
+  - component: {fileID: 6023990570518609444}
   m_Layer: 0
   m_Name: Collectible - Mosquito
   m_TagString: Untagged
@@ -296,6 +297,7 @@ MonoBehaviour:
   darkForm: {fileID: 2969304851296117367}
   trueForm: {fileID: 2084253790892686276}
   secondsRevelead: 2
+  randomMovement: {fileID: 6023990570518609444}
 --- !u!58 &7163936633727254727
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -455,6 +457,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &6023990570518609444
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8108096388383052621}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8540bb3dae5f0d48af6671401c54a11, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  driftRadius: 0.5
+  driftSpeed: 1.5
 --- !u!1 &8640906670973602579
 GameObject:
   m_ObjectHideFlags: 0

@@ -19,6 +19,7 @@ public class Mosquito : MonoBehaviour
         mosquitoAudio.Play();
 
         Debug.Log("Mosquito Spawn");
+
     }
 
     // Update is called once per frame

@@ -14,6 +14,8 @@ public class Echolocatable : MonoBehaviour
 
     AudioSource revealedSound;
 
+    public RandomMovement randomMovement;
+
     private void Start()
     {
         trueForm.transform.localScale = Vector3.zero;
@@ -34,10 +36,15 @@ public class Echolocatable : MonoBehaviour
         canSwitchForms = false;
         darkForm.transform.localScale = Vector3.zero;
         trueForm.transform.localScale = Vector3.one;
+        if (randomMovement != null)
+        {
+            randomMovement.enabled = true;
+        }
         yield return new WaitForSeconds(secondsRevelead);
         darkForm.transform.localScale = Vector3.one;
         trueForm.transform.localScale = Vector3.zero;
         canSwitchForms = true;
+
     }
 
     private void OnParticleCollision(GameObject other)

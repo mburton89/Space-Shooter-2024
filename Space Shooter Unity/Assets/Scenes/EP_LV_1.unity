@@ -7758,9 +7758,9 @@ MonoBehaviour:
   owlPrefab: {fileID: 8550856737467679380, guid: c482b016e5c640c4cb319376d9607a8b, type: 3}
   mosquitoPrefab: {fileID: 8108096388383052621, guid: 169968f72d44719478e2b85920e1839e, type: 3}
   mothPrefab: {fileID: 32335252638422837, guid: bdae67bbd237caf4893288d2c30473c0, type: 3}
-  numberOfOwlsToSpawn: 15
-  numberOfMosquitosToSpawn: 4
-  numberOfMothsToSpawn: 30
+  numberOfOwlsToSpawn: 0
+  numberOfMosquitosToSpawn: 20
+  numberOfMothsToSpawn: 0
   minX: -8.5
   maxX: 44
   minY: -4.5
@@ -36351,9 +36351,9 @@ MonoBehaviour:
   owlPrefab: {fileID: 8550856737467679380, guid: c482b016e5c640c4cb319376d9607a8b, type: 3}
   mosquitoPrefab: {fileID: 8108096388383052621, guid: 169968f72d44719478e2b85920e1839e, type: 3}
   mothPrefab: {fileID: 32335252638422837, guid: bdae67bbd237caf4893288d2c30473c0, type: 3}
-  numberOfOwlsToSpawn: 5
-  numberOfMosquitosToSpawn: 2
-  numberOfMothsToSpawn: 8
+  numberOfOwlsToSpawn: 0
+  numberOfMosquitosToSpawn: 20
+  numberOfMothsToSpawn: 0
   minX: 22
   maxX: 41
   minY: 24
