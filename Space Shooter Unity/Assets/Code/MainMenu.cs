@@ -13,6 +13,7 @@ public class MainMenu : MonoBehaviour
     public Button level2Button;
     public Button level3Button;
     public Button gotItButton;
+    public Button howToPlayButton;
     //public TextMeshProUGUI highestWaveText;
 
     public GameObject howToPlayMenu;
@@ -21,17 +22,18 @@ public class MainMenu : MonoBehaviour
         level1Button.onClick.AddListener(HandleLevel1Clicked);
         level2Button.onClick.AddListener(HandleLevel2Clicked);
         level3Button.onClick.AddListener(HandleLevel3Clicked);
+        howToPlayButton.onClick.AddListener(HandleHowToPlayClicked);
 
-        if (PlayerPrefs.GetInt("HasPlayed") != 1)
-        {
-            PlayerPrefs.SetInt("HasPlayed", 1);
-            howToPlayMenu.SetActive(true);
-            gotItButton.onClick.AddListener(HandleGotItPressed);
-        }
-        else
-        { 
-            Destroy(howToPlayMenu);
-        }
+     // if (PlayerPrefs.GetInt("HasPlayed") != 1)
+    //  {
+     //        PlayerPrefs.SetInt("HasPlayed", 1);
+     //        howToPlayMenu.SetActive(true);
+     //        gotItButton.onClick.AddListener(HandleGotItPressed);
+     // }
+     // else 
+     // { 
+       //     Destroy(howToPlayMenu);
+      //}
 
         //int highestWave = PlayerPrefs.GetInt("highestWave");
         //highestWaveText.SetText("Highest Wave: " + highestWave);
@@ -52,8 +54,14 @@ public class MainMenu : MonoBehaviour
         SceneManager.LoadScene(3);
     }
 
+    void HandleHowToPlayClicked()
+    {
+        howToPlayMenu.SetActive(true);
+        gotItButton.onClick.AddListener(HandleGotItPressed);
+    }
+
     void HandleGotItPressed()
     {
-        Destroy(howToPlayMenu);
+        howToPlayMenu.SetActive(false);
     }
 }
