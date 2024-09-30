@@ -19,6 +19,82 @@ MonoBehaviour:
     m_Key: title
     m_Metadata:
       m_Items: []
+  - m_Id: 1518957417644032
+    m_Key: level_1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1521121338769408
+    m_Key: score
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1521200724361216
+    m_Key: menu_resume
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1521367171121152
+    m_Key: menu_restart
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1521446879674368
+    m_Key: menu_menu
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1521540551065600
+    m_Key: menu_quit
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1521645958119424
+    m_Key: sound_master
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1521773938917376
+    m_Key: sound_sound-effect
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1521894109921280
+    m_Key: sound_music
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1522095897886720
+    m_Key: sound_ambient
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1522196213055488
+    m_Key: instructions_title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1522303050366976
+    m_Key: instructions_left
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1522354753552384
+    m_Key: instructions_right
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1522396948250624
+    m_Key: instructions_moth
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1522470851887104
+    m_Key: instructions_mosquito
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1522549381840896
+    m_Key: instructions_owl
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1522586677592064
+    m_Key: instructions_accept
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1530272546734080
+    m_Key: level_complete
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1531204412030976
+    m_Key: retry
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

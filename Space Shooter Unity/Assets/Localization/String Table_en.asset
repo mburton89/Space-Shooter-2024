@@ -22,6 +22,82 @@ MonoBehaviour:
     m_Localized: Echo Park
     m_Metadata:
       m_Items: []
+  - m_Id: 1518957417644032
+    m_Localized: Level 1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1521121338769408
+    m_Localized: 'Moths Eaten: '
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1521200724361216
+    m_Localized: Resume
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1521367171121152
+    m_Localized: Restart
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1521446879674368
+    m_Localized: Menu
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1521540551065600
+    m_Localized: Quit
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1521645958119424
+    m_Localized: Master Volume
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1521773938917376
+    m_Localized: Sound Effect
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1521894109921280
+    m_Localized: Music
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1522095897886720
+    m_Localized: Ambient
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1522196213055488
+    m_Localized: How To Play
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1522303050366976
+    m_Localized: Use joystick to move
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1522354753552384
+    m_Localized: Tap the right side to echolocate
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1522396948250624
+    m_Localized: Eat for Points
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1522470851887104
+    m_Localized: Eat for Health
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1522549381840896
+    m_Localized: Avoid! Owls eat YOU!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1522586677592064
+    m_Localized: Got it!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1530272546734080
+    m_Localized: Level Complete!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1531204412030976
+    m_Localized: Retry
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
