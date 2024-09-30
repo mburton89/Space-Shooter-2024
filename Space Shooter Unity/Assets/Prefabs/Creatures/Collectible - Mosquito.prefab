@@ -296,7 +296,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   darkForm: {fileID: 2969304851296117367}
   trueForm: {fileID: 2084253790892686276}
-  secondsRevelead: 2
+  secondsRevelead: 2.5
   randomMovement: {fileID: 6023990570518609444}
 --- !u!58 &7163936633727254727
 CircleCollider2D:
@@ -346,6 +346,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   refuelBoost: 1
+  giveHealth: 0
   collectSound: {fileID: 8300000, guid: 7f61b0243d3f0024d9cbff18dd5ef3f8, type: 3}
   collectVolume: 1
 --- !u!114 &1329787750253612760

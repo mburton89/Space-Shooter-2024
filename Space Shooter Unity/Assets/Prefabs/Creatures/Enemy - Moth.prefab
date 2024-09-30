@@ -54,7 +54,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   darkForm: {fileID: 4611976500437182017}
   trueForm: {fileID: 7266570430224708919}
-  secondsRevelead: 2
+  secondsRevelead: 2.5
+  randomMovement: {fileID: 0}
 --- !u!58 &2644480732514533591
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -89,7 +90,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.34
+  m_Radius: 0.58
 --- !u!114 &3469749966866373576
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -103,6 +104,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   refuelBoost: 0
+  giveHealth: 0
   collectSound: {fileID: 8300000, guid: 7f61b0243d3f0024d9cbff18dd5ef3f8, type: 3}
   collectVolume: 1
 --- !u!114 &2763221279569375609
@@ -138,8 +140,8 @@ MonoBehaviour:
   projectileSpawnPoint: {fileID: 0}
   animator: {fileID: 0}
   echoParticleSystem: {fileID: 0}
-  acceleration: 3
-  maxSpeed: 8
+  acceleration: 29
+  maxSpeed: 5
   maxHealth: 3
   fireRate: 0
   projectileSpeed: 0

@@ -73,6 +73,7 @@ public class PlayerShip : Ship
             if (Input.GetMouseButton(1))
             {
                 Thrust();
+                Joystick.gameObject.SetActive(false); // Deactivate joystick for desktop
             }
             if (Input.GetKeyDown(KeyCode.Space))
             {

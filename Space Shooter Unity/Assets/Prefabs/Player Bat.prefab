@@ -10005,8 +10005,8 @@ MonoBehaviour:
   projectileSpawnPoint: {fileID: 8054360030738742564}
   animator: {fileID: 2945628601251135141}
   echoParticleSystem: {fileID: 2591699680608172830}
-  acceleration: 17
-  maxSpeed: 8
+  acceleration: 135
+  maxSpeed: 9
   maxHealth: 3
   fireRate: 0
   projectileSpeed: 600
@@ -10016,7 +10016,7 @@ MonoBehaviour:
   canShoot: 0
   GameManager: {fileID: 0}
   dashSF: {fileID: 6317396924735775081}
-  moveSpeed: 10
+  moveSpeed: 15
   dashDistance: 100
   dashDuration: 1
   dashCooldown: 1

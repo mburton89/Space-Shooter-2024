@@ -47,7 +47,7 @@ public class Ship : MonoBehaviour
 
     public void Thrust()
     {
-        rigidBody2D.AddForce(transform.up * acceleration);
+        rigidBody2D.AddForce(transform.up * acceleration * 20 * Time.deltaTime);
         if (thrustParticles != null)
         {
             //thrustParticles.Emit(1);
@@ -56,7 +56,7 @@ public class Ship : MonoBehaviour
 
     public void Thrust(float strength)
     {
-        rigidBody2D.AddForce(transform.up * acceleration * strength);
+        rigidBody2D.AddForce(transform.up * acceleration * strength * Time.deltaTime);
         if (thrustParticles != null)
         {
             //thrustParticles.Emit(1);

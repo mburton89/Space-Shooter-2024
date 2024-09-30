@@ -332,7 +332,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   darkForm: {fileID: 3055473297345802452}
   trueForm: {fileID: 4557556169272197508}
-  secondsRevelead: 2
+  secondsRevelead: 2.5
+  randomMovement: {fileID: 0}
 --- !u!58 &2113790534423202597
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -388,8 +389,8 @@ MonoBehaviour:
   projectileSpawnPoint: {fileID: 0}
   animator: {fileID: 0}
   echoParticleSystem: {fileID: 0}
-  acceleration: 4
-  maxSpeed: 8
+  acceleration: 22
+  maxSpeed: 9
   maxHealth: 3
   fireRate: 0
   projectileSpeed: 0
