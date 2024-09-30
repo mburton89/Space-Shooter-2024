@@ -10024,7 +10024,7 @@ MonoBehaviour:
   dashForce: 100
   playerAnimator: {fileID: 0}
   Joystick: {fileID: 0}
-  joystickSpeedBuffer: 0.15
+  joystickSpeedBuffer: 2.5
 --- !u!1 &5457017923115740930
 GameObject:
   m_ObjectHideFlags: 0

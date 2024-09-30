@@ -65,6 +65,18 @@ public class PlayerShip : Ship
         {
             HandleJoystick();
             HandleScreenTaps();
+
+            float aspectRatio = (float)Screen.width / Screen.height;
+
+            // Check if the screen is wider than it is tall
+            if (aspectRatio > 1)
+            {
+                joystickSpeedBuffer = 2.5f; // Set to 2.5 if wider
+            }
+            else
+            {
+                joystickSpeedBuffer = 7f; // Set to 5 if taller or square
+            }
         }
         else
         { 
@@ -79,7 +91,12 @@ public class PlayerShip : Ship
             {
                 Echo();
             }
+            //HandleJoystick();
+
         }
+
+
+
     }
 
     void FollowMouse()
