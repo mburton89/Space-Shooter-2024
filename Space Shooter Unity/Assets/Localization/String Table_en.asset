@@ -23,7 +23,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 1518957417644032
-    m_Localized: Level 1
+    m_Localized: Play
     m_Metadata:
       m_Items: []
   - m_Id: 1521121338769408
@@ -96,6 +96,10 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 1531204412030976
     m_Localized: Retry
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2521862087806976
+    m_Localized: "Fran\xE7ais"
     m_Metadata:
       m_Items: []
   references:

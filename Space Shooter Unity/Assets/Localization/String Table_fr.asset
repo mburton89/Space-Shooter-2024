@@ -23,7 +23,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 1518957417644032
-    m_Localized: Niveau 1
+    m_Localized: Jouer
     m_Metadata:
       m_Items: []
   - m_Id: 1521121338769408
@@ -96,6 +96,10 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 1531204412030976
     m_Localized: "R\xE9essayer"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2521862087806976
+    m_Localized: English
     m_Metadata:
       m_Items: []
   references:

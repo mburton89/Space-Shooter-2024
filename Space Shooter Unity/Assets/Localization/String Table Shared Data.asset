@@ -95,6 +95,10 @@ MonoBehaviour:
     m_Key: retry
     m_Metadata:
       m_Items: []
+  - m_Id: 2521862087806976
+    m_Key: change-language
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
