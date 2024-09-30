@@ -18,6 +18,8 @@ public class CameraFollow : MonoBehaviour
     void FixedUpdate()
     {
         // Create a position for the camera based on where the player is.
+        if (player == null) return;
+
         Vector3 targetCamPos = player.position + offset;
 
         // Smoothly interpolate between the camera's current position and the target position.
