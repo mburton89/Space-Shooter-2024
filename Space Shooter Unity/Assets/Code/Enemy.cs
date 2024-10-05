@@ -74,7 +74,8 @@ public class Enemy : Ship
     void RunAway()
     {
         if (target == null) return;
-        Vector2 directionToFace = new Vector2(target.position.x + transform.position.x, target.position.y + transform.position.y);
+        //Vector2 directionToFace = new Vector2(target.position.x + transform.position.x, target.position.y + transform.position.y);
+        Vector2 directionToFace = new Vector2(transform.position.x - target.position.x, transform.position.y - target.position.y);
         transform.up = directionToFace;
         Thrust();
     }

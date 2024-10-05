@@ -324,68 +324,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77624f28614e33247a9ad124a2d27f78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1001 &35694014
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 1242734449}
-    m_Modifications:
-    - target: {fileID: 32335252638422837, guid: bdae67bbd237caf4893288d2c30473c0, type: 3}
-      propertyPath: m_Name
-      value: Enemy - Moth (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 7863779223315785296, guid: bdae67bbd237caf4893288d2c30473c0, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 5.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 7863779223315785296, guid: bdae67bbd237caf4893288d2c30473c0, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 42.9
-      objectReference: {fileID: 0}
-    - target: {fileID: 7863779223315785296, guid: bdae67bbd237caf4893288d2c30473c0, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7863779223315785296, guid: bdae67bbd237caf4893288d2c30473c0, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7863779223315785296, guid: bdae67bbd237caf4893288d2c30473c0, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7863779223315785296, guid: bdae67bbd237caf4893288d2c30473c0, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7863779223315785296, guid: bdae67bbd237caf4893288d2c30473c0, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7863779223315785296, guid: bdae67bbd237caf4893288d2c30473c0, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7863779223315785296, guid: bdae67bbd237caf4893288d2c30473c0, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7863779223315785296, guid: bdae67bbd237caf4893288d2c30473c0, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: bdae67bbd237caf4893288d2c30473c0, type: 3}
---- !u!4 &35694015 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7863779223315785296, guid: bdae67bbd237caf4893288d2c30473c0, type: 3}
-  m_PrefabInstance: {fileID: 35694014}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &39375197
 GameObject:
   m_ObjectHideFlags: 0
@@ -7881,7 +7819,6 @@ Transform:
   - {fileID: 223834681}
   - {fileID: 1109668494}
   - {fileID: 2021394681}
-  - {fileID: 35694015}
   - {fileID: 55765984}
   - {fileID: 1701788584}
   - {fileID: 265941925}
@@ -8086,7 +8023,7 @@ MonoBehaviour:
   mothPrefab: {fileID: 32335252638422837, guid: bdae67bbd237caf4893288d2c30473c0, type: 3}
   numberOfOwlsToSpawn: 9
   numberOfMosquitosToSpawn: 4
-  numberOfMothsToSpawn: 28
+  numberOfMothsToSpawn: 30
   minX: -8.5
   maxX: 44
   minY: -4.5

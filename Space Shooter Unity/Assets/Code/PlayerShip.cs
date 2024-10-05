@@ -66,17 +66,6 @@ public class PlayerShip : Ship
             HandleJoystick();
             HandleScreenTaps();
 
-            float aspectRatio = (float)Screen.width / Screen.height;
-
-            // Check if the screen is wider than it is tall
-            if (aspectRatio > 1)
-            {
-                joystickSpeedBuffer = 2.5f; // Set to 2.5 if wider
-            }
-            else
-            {
-                joystickSpeedBuffer = 7f; // Set to 5 if taller or square
-            }
         }
         else
         { 
@@ -95,8 +84,19 @@ public class PlayerShip : Ship
 
         }
 
+        float aspectRatio = (float)Screen.width / Screen.height;
 
-
+        // Check if the screen is wider than it is tall
+        if (aspectRatio > 1)
+        {
+            joystickSpeedBuffer = 2.5f; // Set to 2.5 if wider
+            Camera.main.orthographicSize = 5.9f;
+        }
+        else
+        {
+            joystickSpeedBuffer = 5.75f; // Set to 5 if taller or square
+            Camera.main.orthographicSize = 9;
+        }
     }
 
     void FollowMouse()
@@ -187,37 +187,37 @@ public class PlayerShip : Ship
 
     void HandleKeyboard()
     {
-        float moveHorizontal = Input.GetAxis("Horizontal");
-        float moveVertical = Input.GetAxis("Vertical");
+        //float moveHorizontal = Input.GetAxis("Horizontal");
+        //float moveVertical = Input.GetAxis("Vertical");
 
-        // Calculate movement direction
-        Vector2 movement = new Vector2(moveHorizontal, moveVertical).normalized;
+        //// Calculate movement direction
+        //Vector2 movement = new Vector2(moveHorizontal, moveVertical).normalized;
 
-        // Store the current velocity
-        Vector2 currentVelocity = rigidBody2D.velocity;
+        //// Store the current velocity
+        //Vector2 currentVelocity = rigidBody2D.velocity;
 
-        // Check if there's input for movement
-        if (movement != Vector2.zero)
-        {
-            // Move the player
-            rigidBody2D.velocity = movement * moveSpeed;
+        //// Check if there's input for movement
+        //if (movement != Vector2.zero)
+        //{
+        //    // Move the player
+        //    rigidBody2D.velocity = movement * moveSpeed;
 
-            // Rotate the player
-            float angle = (Mathf.Atan2(movement.y, movement.x) * Mathf.Rad2Deg) - 90;
-            rigidBody2D.rotation = angle;
+        //    // Rotate the player
+        //    float angle = (Mathf.Atan2(movement.y, movement.x) * Mathf.Rad2Deg) - 90;
+        //    rigidBody2D.rotation = angle;
 
-            // Reset stopMoveFeature since the player is moving
-            stopMoveFeature = false;
-        }
-        else if (!stopMoveFeature && currentVelocity.magnitude > 0f && Vector2.Dot(currentVelocity, rigidBody2D.velocity) <= 0f)
-        {
-            // If there's no input and the ship was previously moving, and it's now starting to slow down
-            // Set velocity to zero immediately
-            rigidBody2D.velocity = Vector2.zero;
+        //    // Reset stopMoveFeature since the player is moving
+        //    stopMoveFeature = false;
+        //}
+        //else if (!stopMoveFeature && currentVelocity.magnitude > 0f && Vector2.Dot(currentVelocity, rigidBody2D.velocity) <= 0f)
+        //{
+        //    // If there's no input and the ship was previously moving, and it's now starting to slow down
+        //    // Set velocity to zero immediately
+        //    rigidBody2D.velocity = Vector2.zero;
 
-            // Set stopMoveFeature to true to prevent further stopping until player starts moving again
-            stopMoveFeature = true;
-        }
+        //    // Set stopMoveFeature to true to prevent further stopping until player starts moving again
+        //    stopMoveFeature = true;
+        //}
 
         //if (Input.GetMouseButton(1))
         //{
@@ -233,18 +233,18 @@ public class PlayerShip : Ship
         }
 
 
-        if (GameManager.dashBarValue <= .33f && stopMoveFeature == false)
-        {
-            moveSpeed = tempMoveSpeed / 2f;
-        }
-        else if (GameManager.dashBarValue >= .33f && GameManager.dashBarValue <= .66f && stopMoveFeature == false)
-        {
-            moveSpeed = tempMoveSpeed / 1.5f;
-        }
-        else if (GameManager.dashBarValue > .66f && stopMoveFeature == false)
-        {
-            moveSpeed = tempMoveSpeed;
-        }
+        //if (GameManager.dashBarValue <= .33f && stopMoveFeature == false)
+        //{
+        //    moveSpeed = tempMoveSpeed / 2f;
+        //}
+        //else if (GameManager.dashBarValue >= .33f && GameManager.dashBarValue <= .66f && stopMoveFeature == false)
+        //{
+        //    moveSpeed = tempMoveSpeed / 1.5f;
+        //}
+        //else if (GameManager.dashBarValue > .66f && stopMoveFeature == false)
+        //{
+        //    moveSpeed = tempMoveSpeed;
+        //}
     }
 
     void HandleJoystick()
